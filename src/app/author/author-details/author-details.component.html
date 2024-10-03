@@ -1,27 +1,27 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-5 text-center pt-4">
-            <img [src]="author.imageLink" alt="author image" style="height: 25rem;">
+            <img [src]="author?.imageLink" alt="author image" style="height: 25rem;">
         </div>
         <div class="col-sm-7">
             <mat-list role="list">
                 <mat-list-item>
-                    <span matListItemTitle>{{author.name}}</span>
+                    <span matListItemTitle>{{author?.name}}</span>
                     <span matListItemLine>Name</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{author.dob}}</span>
+                    <span matListItemTitle>{{author?.dob}}</span>
                     <span matListItemLine>Date of birth</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{author.nationality}}</span>
+                    <span matListItemTitle>{{author?.nationality}}</span>
                     <span matListItemLine>Nationality</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{author.genres}}</span>
+                    <span matListItemTitle>{{author?.genres}}</span>
                     <span matListItemLine>Genre</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>

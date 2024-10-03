@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -1118,13 +1119,18 @@ export class AuthorService {
     }
 
   ]
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   getAllAuthors() {
-    return this.authors;
+    return this.http.get("http://localhost:8080/api/author");
+  }
+
+  getAllAuthorsFiltered(filter: string) {
+    return this.http.get("http://localhost:8080/api/author/filter/" + filter);
   }
 
   getAuthorById(id: number) {
-    return this.authors.find(a => a.id == id);
+    return this.http.get("http://localhost:8080/api/author/" + id);
   }
 }

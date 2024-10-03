@@ -1,53 +1,53 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-5 d-flex flex-column align-items-center text-center pt-4">
-            <img [src]="'../../../assets/' + book.imageLink" alt="book image" style="height: 25rem;">
-            <div class="w-75 mt-2">{{book.fullDescription}}</div>
+            <img [src]="'../../../assets/' + book?.imageLink" alt="book image" style="height: 25rem;">
+            <div class="w-75 mt-2">{{book?.fullDescription}}</div>
         </div>
         <div class="col-sm-7">
             <mat-list>
                 <mat-list-item>
                     <span matListItemLine>ISBN</span>
-                    <span matListItemTitle>{{book.isbn}}</span>
+                    <span matListItemTitle>{{book?.isbn}}</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
                     <span matListItemLine>Title</span>
-                    <span matListItemTitle>{{book.title}}</span>
+                    <span matListItemTitle>{{book?.title}}</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle class="cursor-pointer">{{getFullAuthorName(book.author)}}</span>
+                    <span matListItemTitle class="cursor-pointer">{{getFullAuthorName(book?.author)}}</span>
                     <span matListItemLine>Author</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle class="cursor-pointer">{{book.genre ?? []}}</span>
+                    <span matListItemTitle class="cursor-pointer">{{book?.genres ?? []}}</span>
                     <span matListItemLine>Genre</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{book.country}}</span>
+                    <span matListItemTitle>{{book?.country}}</span>
                     <span matListItemLine>Country</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{book.language}}</span>
+                    <span matListItemTitle>{{book?.language}}</span>
                     <span matListItemLine>Language</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{book.publisher}}</span>
+                    <span matListItemTitle>{{book?.publisher}}</span>
                     <span matListItemLine>Publisher</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{book.pages}}</span>
+                    <span matListItemTitle>{{book?.pages}}</span>
                     <span matListItemLine>Pages</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{book.year}}</span>
+                    <span matListItemTitle>{{book?.year}}</span>
                     <span matListItemLine>Year</span>
                 </mat-list-item>
             </mat-list>

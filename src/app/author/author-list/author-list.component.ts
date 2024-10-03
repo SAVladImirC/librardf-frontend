@@ -15,7 +15,22 @@ export class AuthorListComponent implements OnInit {
     this.getAllAuthors();
   }
 
-  getAllAuthors(){
-    this.authors = this.authorService.getAllAuthors();
+  getAllAuthors() {
+    this.authorService.getAllAuthors().subscribe((result: any) => {
+      this.authors = result;
+    })
+  }
+
+  getAllAuthorsFiltered(filter: string) {
+    this.authorService.getAllAuthorsFiltered(filter).subscribe((result: any) => {
+      this.authors = result;
+    })
+  }
+
+  filterChanged(filter: any) {
+    if (filter.target.value)
+      this.getAllAuthorsFiltered(filter.target.value)
+    else
+      this.getAllAuthors();
   }
 }

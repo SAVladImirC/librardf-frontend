@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthorService } from 'src/app/core/services/author.service';
 import { BookService } from 'src/app/core/services/book.service';
 
@@ -10,19 +11,33 @@ import { BookService } from 'src/app/core/services/book.service';
 export class BookListComponent implements OnInit {
   books: any[] = [];
 
-  constructor(private bookService: BookService, private authorService: AuthorService) { }
+  constructor(private bookService: BookService, private authorService: AuthorService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.getAllBooks();
   }
 
   getAllBooks() {
-    this.books = this.bookService.getAllBooks();
-    console.log(
-      this.books.map(b => {
-        return { ...b, author: this.authorService.authors.find(a => b.author == `${a.name} ${a.surname}`) }
-      }
-      )
-    )
+    this.spinner.show();
+    this.bookService.getAllBooks().subscribe((result: any) => {
+      this.books = result;
+      this.spinner.hide();
+    })
+  }
+
+  getFilteredBooks(filter: string) {
+    this.spinner.show();
+    this.bookService.getAllBooksFiltered(filter).subscribe((result: any) => {
+      this.books = result;
+      this.spinner.hide();
+    })
+  }
+
+  filterChanged(filter: any) {
+    if (filter.target.value) {
+      this.getFilteredBooks(filter.target.value);
+    } else {
+      this.getAllBooks();
+    }
   }
 }

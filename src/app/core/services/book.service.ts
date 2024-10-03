@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -30,7 +31,7 @@ export class BookService {
       "shortDescription": "A novel about Okonkwo, a Nigerian man, whose life is upended by colonialism and the arrival of Christian missionaries.",
       "fullDescription": "Things Fall Apart is set in pre-colonial Nigeria and tells the story of Okonkwo, a powerful and influential man in the Igbo society of Umuofia. As European missionaries and colonial administrators start influencing the community, Okonkwo struggles to maintain his position and beliefs. Achebe's narrative highlights the complexities of African traditions and the devastating effects of colonialism. The novel explores themes of masculinity, pride, change, and identity, creating a powerful commentary on cultural clash and transformation.",
       "publisher": "Heinemann",
-      "genre": [
+      "genres": [
         "Historical Fiction"
       ],
       "year": 1958
@@ -60,7 +61,7 @@ export class BookService {
       "shortDescription": "A collection of magical stories for children, filled with moral lessons and emotional depth.",
       "fullDescription": "Hans Christian Andersen's Fairy Tales have transcended generations and geographical boundaries, captivating both children and adults. Stories like The Little Mermaid, The Ugly Duckling, and The Snow Queen contain elements of wonder, magic, and heartbreak, offering lessons about human nature, love, and societal values. Andersen’s tales often feature protagonists who overcome great adversity or experience personal transformation, which mirror the author's own life struggles. Though aimed at children, these stories engage with universal truths about sacrifice, beauty, and the pursuit of happiness.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Children's Literature",
         "Fantasy"
       ],
@@ -91,7 +92,7 @@ export class BookService {
       "shortDescription": "An epic poem chronicling Dante’s journey through Hell, Purgatory, and Heaven.",
       "fullDescription": "The Divine Comedy is Dante Alighieri's magnum opus, divided into three parts: Inferno, Purgatorio, and Paradiso. Written in the early 14th century, it presents a deeply allegorical journey of the soul through sin, repentance, and redemption. Dante, guided by the poet Virgil and later his idealized love Beatrice, travels through the circles of Hell, the terraces of Purgatory, and the spheres of Heaven. Along the way, he meets historical and mythological figures who represent various virtues and vices. The poem explores themes of divine justice, love, and salvation while also serving as a commentary on 14th-century Florentine politics and human morality.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Epic Poetry"
       ],
       "year": 1315
@@ -108,7 +109,7 @@ export class BookService {
       "shortDescription": "An ancient Mesopotamian epic that explores the themes of friendship, heroism, and the search for immortality.",
       "fullDescription": "The Epic of Gilgamesh is one of the oldest surviving works of literature, originating from ancient Mesopotamia. It tells the story of Gilgamesh, the king of Uruk, and his deep friendship with the wild man Enkidu. After Enkidu's death, Gilgamesh embarks on a quest for immortality, meeting gods, spirits, and mythological figures along the way. The epic is notable for its exploration of human mortality, the fear of death, and the desire to leave a lasting legacy. It also presents a nuanced portrayal of friendship, grief, and the search for meaning in life.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Epic Poetry"
       ],
       "year": -1700
@@ -125,7 +126,7 @@ export class BookService {
       "shortDescription": "A biblical story about suffering, faith, and the nature of God's justice.",
       "fullDescription": "The Book of Job is one of the wisdom books of the Bible, focusing on the profound suffering of Job, a righteous man whose faith is tested by extreme adversity. Job loses his wealth, family, and health, yet refuses to curse God. Through dialogues with his friends and God, the story examines the nature of suffering, divine justice, and the human condition. Job’s lament and his eventual confrontation with God challenge traditional beliefs about morality and retribution, making the book a deeply philosophical work that addresses the mysteries of divine justice and human suffering.",
       "publisher": "Various (Ancient Hebrew text)",
-      "genre": [
+      "genres": [
         "Religious Text"
       ],
       "year": -600
@@ -142,7 +143,7 @@ export class BookService {
       "shortDescription": "A collection of Middle Eastern folk tales narrated by Scheherazade to delay her execution.",
       "fullDescription": "One Thousand and One Nights, also known as Arabian Nights, is a renowned collection of Middle Eastern and South Asian folk tales. The stories are framed within the narrative of Scheherazade, who tells tales each night to her husband, King Shahryar, to postpone her execution. The collection includes tales of adventure, love, magic, and betrayal, featuring famous stories like \"Aladdin's Wonderful Lamp\" and \"The Seven Voyages of Sinbad the Sailor\". This rich tapestry of narratives reflects the diverse cultures of the Islamic Golden Age and has influenced literature and storytelling across the world.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Folklore",
         "Fantasy"
       ],
@@ -160,7 +161,7 @@ export class BookService {
       "shortDescription": "An Icelandic saga detailing the life of Njál and the complexities of honor and revenge in Viking society.",
       "fullDescription": "Njál's Saga is a classic Icelandic saga written in the 13th century, recounting the life of Njál Thorgeirsson and his family. Set in the Viking Age, the saga explores themes of honor, revenge, and the social dynamics of Icelandic society. Njál, known for his wisdom and foresight, navigates the intricate web of conflicts and feuds that arise among his friends and enemies. The narrative highlights the harsh realities of life during this period and offers insight into Norse culture, law, and values. Its rich character development and intricate plot make it one of the most significant sagas in Icelandic literature.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Historical Fiction"
       ],
       "year": 1350
@@ -190,7 +191,7 @@ export class BookService {
       "shortDescription": "A romantic novel that critiques societal expectations through the love story of Elizabeth Bennet and Mr. Darcy.",
       "fullDescription": "Pride and Prejudice follows the life of Elizabeth Bennet, the intelligent and spirited second daughter of the Bennet family, as she navigates issues of class, marriage, and morality in early 19th-century England. The novel begins with the arrival of Mr. Bingley, a wealthy bachelor, and his enigmatic friend Mr. Darcy. While Elizabeth initially finds Mr. Darcy prideful and insufferable, the story evolves to reveal deeper themes of love, respect, and personal growth. Austen's sharp wit and keen observations of societal norms create a timeless critique of class and gender, making it one of the most beloved works in English literature.",
       "publisher": "T. Egerton, Whitehall",
-      "genre": [
+      "genres": [
         "Classic Romance"
       ],
       "year": 1813
@@ -220,7 +221,7 @@ export class BookService {
       "shortDescription": "A novel depicting the struggles of a retired merchant and the corrupting power of wealth in Paris.",
       "fullDescription": "Le Père Goriot is a seminal work in Balzac's series La Comédie Humaine, illustrating the life of Goriot, an aging father living in a boarding house in Paris, who sacrifices everything for his daughters’ social advancement. The novel offers a vivid portrayal of early 19th-century Parisian society, exploring themes of ambition, love, and social climbing. Through the eyes of Eugène de Rastignac, a young law student, Balzac delves into the complexities of human relationships and the moral decay induced by wealth and class ambition. The interplay of familial loyalty and societal aspirations makes this work a critical examination of the human condition.",
       "publisher": "Michel Lévy Frères",
-      "genre": [
+      "genres": [
         "Literary Fiction"
       ],
       "year": 1835
@@ -251,7 +252,7 @@ export class BookService {
       "shortDescription": "A trilogy exploring themes of identity, existence, and the nature of storytelling.",
       "fullDescription": "Samuel Beckett’s trilogy—Molloy, Malone Dies, and The Unnamable—is a profound exploration of the human experience through the lens of absurdism. Each novel features a distinct narrative voice, grappling with themes of identity, consciousness, and the search for meaning in a chaotic world. Molloy follows a man’s fragmented journey as he searches for his mother, while Malone Dies chronicles a dying man’s reflections on life, storytelling, and mortality. Finally, The Unnamable presents a stream-of-consciousness monologue that questions the very nature of existence. Beckett's innovative style and existential themes challenge traditional narrative forms, solidifying his place as a cornerstone of modern literature.",
       "publisher": "Les Éditions de Minuit",
-      "genre": [
+      "genres": [
         "Absurdist Fiction"
       ],
       "year": 1952
@@ -281,7 +282,7 @@ export class BookService {
       "shortDescription": "A collection of 100 tales told by a group of young people escaping the Black Death.",
       "fullDescription": "The Decameron is a landmark work of Italian literature composed by Giovanni Boccaccio in the 14th century. The narrative is framed around ten young people—seven women and three men—who flee Florence to a secluded villa to escape the plague. To pass the time, they each tell stories over ten days, resulting in a rich tapestry of tales that explore themes of love, lust, wit, and morality. Boccaccio’s work not only reflects the social and cultural mores of his time but also presents a critical view of society, showcasing human resilience in the face of calamity. The tales range from comedic to tragic, making it a compelling and diverse collection that has influenced countless writers throughout history.",
       "publisher": "Giunti",
-      "genre": [
+      "genres": [
         "Frame Story",
         "Classic Literature"
       ],
@@ -312,7 +313,7 @@ export class BookService {
       "shortDescription": "A collection of philosophical short stories that blur the lines between reality and fiction.",
       "fullDescription": "Ficciones is a celebrated collection of short stories by Argentine writer Jorge Luis Borges, first published in 1944. The stories explore intricate themes such as infinity, labyrinths, identity, and the nature of reality. Borges masterfully intertwines philosophical concepts with fantastical narratives, creating a unique reading experience that challenges conventional storytelling. Notable stories include \"Tlön, Uqbar, Orbis Tertius\", which introduces an imaginary world, and \"The Garden of Forking Paths\", which presents the idea of multiple realities. Borges’ innovative approach to literature has had a profound impact on modern fiction, inspiring writers and thinkers across the globe.",
       "publisher": "Editorial Sur",
-      "genre": [
+      "genres": [
         "Short Stories",
         "Fantasy"
       ],
@@ -343,7 +344,7 @@ export class BookService {
       "shortDescription": "A dark and passionate tale of love and revenge set on the Yorkshire moors.",
       "fullDescription": "Wuthering Heights is Emily Brontë’s only novel, a compelling and turbulent story of the intense and destructive love between Heathcliff and Catherine Earnshaw. Set against the wild and desolate landscape of the Yorkshire moors, the novel unfolds through multiple narrators, revealing the complexities of love, vengeance, and social class. Heathcliff, an orphan adopted by the Earnshaw family, grows to become both a tragic hero and an anti-hero, consumed by his love for Catherine and driven to revenge against those who wrong him. Brontë’s exploration of emotional depth, nature, and the supernatural has established the novel as a classic of English literature, celebrated for its psychological insight and powerful imagery.",
       "publisher": "Thomas Cautley Newby",
-      "genre": [
+      "genres": [
         "Gothic Fiction",
         "Romance"
       ],
@@ -374,7 +375,7 @@ export class BookService {
       "shortDescription": "A philosophical novel examining absurdism through the life of Meursault, an emotionally detached man.",
       "fullDescription": "The Stranger follows Meursault, an Algerian man whose indifferent response to his mother’s death and subsequent actions lead him into a moral crisis. Camus explores themes of absurdism and existentialism, illustrating the protagonist's alienation from society and conventional values. As Meursault navigates a series of events that culminate in a murder trial, his existential detachment raises questions about morality, meaning, and the human condition. The novel is a powerful critique of societal norms and an exploration of the absurdity of existence, cementing Camus' status as a leading figure in 20th-century literature.",
       "publisher": "Gallimard",
-      "genre": [
+      "genres": [
         "Existential Fiction"
       ],
       "year": 1942
@@ -403,7 +404,7 @@ export class BookService {
       "shortDescription": "A collection of poems marked by a haunting and fractured lyricism, exploring trauma, memory, and the Holocaust.",
       "fullDescription": " Paul Celan's Poems offer a profound and challenging body of work, often shaped by the traumas of the Holocaust and the aftermath of World War II. His poetry delves into themes of loss, exile, and the fragmented nature of language itself. Written in German, Celan's poems employ dense and innovative metaphors, pushing the boundaries of linguistic expression. His most famous poem, \"Death Fugue\", reflects on the horrors of concentration camps, but his later works move towards greater abstraction and linguistic experimentation. Celan's poetry is known for its stark, minimalist style, and its ability to evoke powerful emotions through sparse, enigmatic lines, often revealing deep layers of philosophical and existential inquiry.",
       "publisher": "Various, including Suhrkamp Verlag",
-      "genre": [
+      "genres": [
         "Poetry"
       ],
       "year": 1952
@@ -433,7 +434,7 @@ export class BookService {
       "shortDescription": "A semi-autobiographical novel exploring the absurdities of life through the experiences of Ferdinand Bardamu.",
       "fullDescription": "Journey to the End of the Night is a groundbreaking novel by French author Louis-Ferdinand Céline, known for its innovative use of language and stream-of-consciousness style. The narrative follows Ferdinand Bardamu, a disillusioned soldier, as he navigates the horrors of World War I, the complexities of modern life, and the human condition. Céline’s sharp, cynical wit exposes the absurdity and brutality of existence, blending autobiography with fiction. The novel challenges societal norms and morality, presenting a raw and honest portrayal of humanity’s struggles. Its influence on modern literature is profound, paving the way for existential and absurdist writers.",
       "publisher": "Denoël",
-      "genre": [
+      "genres": [
         "Novel",
         "Modernist"
       ],
@@ -464,7 +465,7 @@ export class BookService {
       "shortDescription": "A humorous and poignant tale of an aging nobleman who becomes a self-styled knight-errant.",
       "fullDescription": "Don Quijote de la Mancha is considered one of the greatest works of literature, chronicling the adventures of Alonso Quixano, an aging nobleman who, inspired by chivalric romances, sets out to revive knighthood as Don Quijote. Accompanied by his loyal squire, Sancho Panza, he embarks on a series of misadventures, mistaking windmills for giants and common peasants for noble damsels. Cervantes’ novel explores themes of reality versus illusion, the nature of identity, and the complexities of human behavior. Its rich characterizations and profound social commentary have made it a foundational text in Western literature, influencing countless authors and artistic movements.",
       "publisher": "Francisco de Robles",
-      "genre": [
+      "genres": [
         "Novel",
         "Classic Literature"
       ],
@@ -495,7 +496,7 @@ export class BookService {
       "shortDescription": "A collection of stories told by pilgrims traveling to Canterbury, reflecting various social classes and themes.",
       "fullDescription": "The Canterbury Tales is a landmark work of English literature, comprising a collection of stories narrated by a diverse group of pilgrims on their journey to the shrine of Saint Thomas Becket in Canterbury. Written in the late 14th century by Geoffrey Chaucer, the tales encompass a wide range of genres, including romance, comedy, and morality tales, reflecting the social and cultural dynamics of the time. Each character, from the Knight to the Wife of Bath, embodies different aspects of medieval society, providing insight into the era’s values, conflicts, and humor. Chaucer’s use of vernacular English and his vivid characterizations have established this work as a foundational text in English literature.",
       "publisher": "William Caxton",
-      "genre": [
+      "genres": [
         "Frame Narrative",
         "Classic Literature"
       ],
@@ -526,7 +527,7 @@ export class BookService {
       "shortDescription": "A collection of Chekhov's short stories, known for their psychological depth and keen observations of Russian society.",
       "fullDescription": "Anton Chekhov’s Stories comprise some of the finest short fiction in world literature, capturing the essence of everyday life in late 19th-century Russia. His stories are renowned for their brevity, subtlety, and keen insight into human nature, often focusing on the moral struggles, frustrations, and quiet despair of ordinary people. Through simple yet powerful prose, Chekhov explores themes such as loneliness, social injustice, love, and the clash between tradition and modernity. His writing style, devoid of sentimentality and moralizing, creates rich, layered narratives that leave much to the reader’s interpretation. Stories like \"The Lady with the Dog\", \"The Seagull\" and \"Ward No. 6\" are among Chekhov’s most celebrated works, exemplifying his genius in the art of the short story.",
       "publisher": "Various, including Penguin Classics",
-      "genre": [
+      "genres": [
         "Short Stories",
         "Fiction"
       ],
@@ -557,7 +558,7 @@ export class BookService {
       "shortDescription": "A novel set in a fictional South American country, exploring imperialism and human greed through the discovery of silver.",
       "fullDescription": "Nostromo is a complex novel by Joseph Conrad, set in the fictional South American country of Costaguana during the late 19th century. The story revolves around the discovery of a rich silver mine and the ensuing political and social upheaval it causes. The titular character, Nostromo, is an Italian expatriate and the mine's trusted foreman, who becomes embroiled in the conflicts between imperialist interests and local desires for independence. Conrad examines themes of imperialism, capitalism, and human ambition, revealing the moral ambiguities inherent in colonial exploitation. His intricate narrative style and rich characterizations create a compelling exploration of the consequences of greed and the impact of foreign intervention on local cultures.",
       "publisher": "William Blackwood and Sons",
-      "genre": [
+      "genres": [
         "Novel",
         "Political Fiction"
       ],
@@ -588,7 +589,7 @@ export class BookService {
       "shortDescription": "A coming-of-age story following the life of Pip, an orphan who seeks to improve his social status.",
       "fullDescription": "Great Expectations is a novel by Charles Dickens that tells the story of Pip, an orphan raised by his sister and her husband, Joe Gargery. After a chance encounter with the escaped convict Magwitch and later the mysterious benefactor Miss Havisham, Pip dreams of becoming a gentleman and winning the love of Estella, Miss Havisham’s beautiful but cold ward. Throughout his journey, Pip faces various challenges and moral dilemmas that ultimately lead him to confront the true meaning of wealth, loyalty, and identity. Dickens’ vivid characters and rich social commentary illuminate the class disparities and injustices of Victorian England, making this novel a timeless exploration of ambition and personal growth.",
       "publisher": "Chapman & Hall",
-      "genre": [
+      "genres": [
         "Novel",
         "Victorian Literature"
       ],
@@ -619,7 +620,7 @@ export class BookService {
       "shortDescription": "A novel that blends fiction and philosophy, questioning free will and determinism through the adventures of Jacques.",
       "fullDescription": "Jacques the Fatalist is a philosophical novel by Denis Diderot that features Jacques, a servant, and his master as they travel and share tales of love, fate, and free will. The narrative employs a conversational style, with Diderot directly engaging the reader and challenging conventional storytelling. Throughout their journey, Jacques expresses a belief in fatalism—the idea that events are predetermined—while his master represents a contrasting viewpoint. The novel explores existential themes, the nature of human relationships, and the interplay between fate and personal agency, making it a significant work in the history of philosophy and literature.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Philosophical Novel"
       ],
       "year": 1796
@@ -649,7 +650,7 @@ export class BookService {
       "shortDescription": "A modernist novel depicting the life of Franz Biberkopf, a man attempting to reintegrate into society after prison.",
       "fullDescription": "Berlin Alexanderplatz is a seminal modernist novel by Alfred Döblin, chronicling the life of Franz Biberkopf, who is released from prison and tries to rebuild his life in the bustling, chaotic environment of 1920s Berlin. The novel employs innovative narrative techniques, including stream-of-consciousness and fragmented dialogue, reflecting the tumultuous and disorienting nature of urban life. As Franz navigates the challenges of poverty, crime, and personal relationships, he embodies the struggles of the modern individual against societal forces. Döblin’s vivid portrayal of Berlin, infused with historical and cultural references, captures the essence of the Weimar Republic era, making the novel a pivotal work in 20th-century literature.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Modernist Novel"
       ],
       "year": 1929
@@ -679,7 +680,7 @@ export class BookService {
       "shortDescription": "A psychological drama exploring the moral dilemmas of Raskolnikov, a student who commits murder.",
       "fullDescription": "Crime and Punishment is a profound exploration of morality, guilt, and redemption, following the troubled protagonist, Raskolnikov, a former student living in St. Petersburg. Raskolnikov develops a theory that certain extraordinary individuals are above the law and believes he can justify the murder of a pawnbroker for a greater good. However, after committing the crime, he is plagued by guilt and paranoia, leading to a psychological unraveling. Dostoevsky delves into themes of morality, justice, and the consequences of alienation, ultimately exploring the possibility of redemption through suffering. The novel's intricate character development and philosophical depth have established it as a cornerstone of world literature.",
       "publisher": "The Russian Messenger",
-      "genre": [
+      "genres": [
         "Psychological Fiction"
       ],
       "year": 1866
@@ -709,7 +710,7 @@ export class BookService {
       "shortDescription": "A psychological drama exploring the moral dilemmas of Raskolnikov, a student who commits murder.",
       "fullDescription": "Crime and Punishment is a profound exploration of morality, guilt, and redemption, following the troubled protagonist, Raskolnikov, a former student living in St. Petersburg. Raskolnikov develops a theory that certain extraordinary individuals are above the law and believes he can justify the murder of a pawnbroker for a greater good. However, after committing the crime, he is plagued by guilt and paranoia, leading to a psychological unraveling. Dostoevsky delves into themes of morality, justice, and the consequences of alienation, ultimately exploring the possibility of redemption through suffering. The novel's intricate character development and philosophical depth have established it as a cornerstone of world literature.",
       "publisher": "The Russian Messenger",
-      "genre": [
+      "genres": [
         "Psychological Fiction"
       ],
       "year": 1869
@@ -739,7 +740,7 @@ export class BookService {
       "shortDescription": "A novel depicting the moral and political chaos in Russia, driven by radical intellectuals.",
       "fullDescription": "The Possessed (also known as Demons or The Devils) is one of Fyodor Dostoevsky's major novels, examining the political unrest in 19th-century Russia through the lens of a small provincial town. The story revolves around the manipulative Pyotr Verkhovensky and the idealistic Nikolai Stavrogin, who represent two opposing forces of revolutionary zeal and moral nihilism. As the town descends into chaos and violence, Dostoevsky explores the destructive consequences of radical ideologies and the inherent dangers of abandoning moral and religious principles. The novel is a powerful reflection on the rise of political extremism, making it a deeply philosophical and psychologically intense work.",
       "publisher": "The Russian Messenger",
-      "genre": [
+      "genres": [
         "Political Novel",
         "Psychological Fiction"
       ],
@@ -770,7 +771,7 @@ export class BookService {
       "shortDescription": "A philosophical novel focusing on the moral dilemmas of the Karamazov brothers, particularly their relationship with their father.",
       "fullDescription": "The Brothers Karamazov is Dostoevsky’s final novel, an epic exploration of faith, free will, and moral struggle. The novel centers on the lives of the Karamazov family—Fyodor, the dissolute father, and his three sons: Dmitri, the passionate eldest; Ivan, the intellectual skeptic; and Alyosha, the spiritual and compassionate youngest. When Fyodor is murdered, the brothers grapple with their roles in his death, leading to intense psychological and philosophical inquiry. Themes of God’s existence, morality, and the nature of human suffering permeate the novel, which is widely regarded as one of the most profound achievements in world literature.",
       "publisher": "The Russian Messenger",
-      "genre": [
+      "genres": [
         "Philosophical Novel",
         "Psychological Fiction"
       ],
@@ -801,7 +802,7 @@ export class BookService {
       "shortDescription": "A comprehensive portrayal of provincial life in 19th-century England, focusing on social reform and personal ambition.",
       "fullDescription": "Middlemarch is considered one of the greatest novels in the English language, offering a richly detailed portrait of life in a provincial English town during the early 19th century. The novel’s vast cast of characters includes Dorothea Brooke, an idealistic young woman, and Tertius Lydgate, a progressive doctor, both of whom struggle to reconcile their dreams with societal limitations. George Eliot (the pen name of Mary Ann Evans) explores themes of political reform, marriage, and the nature of ambition, presenting a critique of the constraints placed on women and the complexity of human motivations. Through its intricate social commentary and psychological depth, Middlemarch offers a timeless reflection on individual and collective morality.",
       "publisher": "Blackwood’s Magazine",
-      "genre": [
+      "genres": [
         "Novel",
         "Victorian Literature"
       ],
@@ -832,7 +833,7 @@ export class BookService {
       "shortDescription": "A novel about an unnamed Black man’s journey through racial invisibility and identity in mid-20th-century America.",
       "fullDescription": "Invisible Man is a groundbreaking novel that explores the experiences of a young Black man who struggles to find his identity and visibility in a racially divided America. The protagonist, who remains unnamed, narrates his journey from the rural South to Harlem, encountering racism, exploitation, and disillusionment along the way. Ralph Ellison’s novel blends elements of existentialism, social commentary, and surrealism, as the protagonist grapples with the complexities of identity, power, and individuality in a society that refuses to see him. The novel is both a powerful critique of racial oppression and a profound exploration of personal and societal invisibility, making it a cornerstone of African American literature.",
       "publisher": "Random House",
-      "genre": [
+      "genres": [
         "Novel",
         "Modernist Fiction"
       ],
@@ -863,7 +864,7 @@ export class BookService {
       "shortDescription": "A tragedy about Medea’s revenge against her unfaithful husband, Jason.",
       "fullDescription": "Medea is one of the most powerful and enduring tragedies from ancient Greek literature, written by the playwright Euripides. The play tells the story of Medea, a sorceress who seeks revenge on her husband, Jason, after he abandons her and their children to marry another woman. Euripides presents Medea as a complex figure—both a victim of betrayal and a figure of intense rage and vengeance. The play explores themes of love, betrayal, revenge, and the position of women in a patriarchal society. Medea is notable for its psychological depth and its challenge to traditional gender roles, making it one of the most compelling works in the classical canon.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Tragedy",
         "Ancient Greek Drama"
       ],
@@ -894,7 +895,7 @@ export class BookService {
       "shortDescription": "A novel about the rise and fall of Thomas Sutpen, a plantation owner in the American South, and his family’s tragic legacy.",
       "fullDescription": "Absalom, Absalom! is considered one of William Faulkner’s most ambitious and challenging novels. The book recounts the story of Thomas Sutpen, a self-made plantation owner, whose pursuit of wealth and power in the antebellum South leads to his family’s eventual ruin. Through a complex, non-linear narrative structure and multiple perspectives, Faulkner explores themes of race, history, and the South’s haunted past. The novel delves into the destructive consequences of ambition, pride, and the legacy of slavery, using Faulkner’s signature stream-of-consciousness style to weave a rich and tragic tapestry of Southern life. Its intricate narrative and psychological complexity have earned it a place as a cornerstone of American modernist literature.",
       "publisher": "Random House",
-      "genre": [
+      "genres": [
         "Southern Gothic",
         "Modernist"
       ],
@@ -925,7 +926,7 @@ export class BookService {
       "shortDescription": "A novel that tells the tragic downfall of the Compson family through multiple, fragmented perspectives.",
       "fullDescription": "The Sound and the Fury is one of Faulkner’s most celebrated novels, known for its innovative use of narrative and its exploration of time, memory, and family disintegration. The story revolves around the Compson family, once a proud Southern dynasty, now in decline. The novel is divided into four sections, each told from a different perspective, including Benjy, the mentally disabled son, and Quentin, the troubled eldest brother. Faulkner’s complex, fragmented structure captures the chaos and decay of the Compson family and the broader collapse of Southern aristocratic values. The novel’s experimental narrative techniques and psychological depth have made it a classic of modernist literature.",
       "publisher": "Jonathan Cape and Harrison Smith",
-      "genre": [
+      "genres": [
         "Southern Gothic",
         "Modernist"
       ],
@@ -956,7 +957,7 @@ export class BookService {
       "shortDescription": "A novel about Emma Bovary, a provincial woman whose dissatisfaction with her life leads to infidelity and financial ruin.",
       "fullDescription": "Madame Bovary is considered one of the greatest realist novels of all time, and a masterpiece of French literature. The novel tells the story of Emma Bovary, an unhappily married woman who longs for romance, wealth, and excitement. Trapped in a mundane provincial life with her dull husband, Charles, Emma embarks on a series of love affairs and extravagant spending, ultimately leading to her emotional and financial downfall. Flaubert’s meticulous attention to detail and his exploration of Emma’s inner life provide a devastating critique of bourgeois society and the romantic ideals that lead to Emma’s destruction. The novel’s themes of desire, disillusionment, and social hypocrisy remain relevant to this day.",
       "publisher": "Revue de Paris",
-      "genre": [
+      "genres": [
         "Realist Novel"
       ],
       "year": 1857
@@ -986,7 +987,7 @@ export class BookService {
       "shortDescription": "A novel following the romantic and political education of a young man during the French Revolution of 1848.",
       "fullDescription": "Sentimental Education is a realist novel by Gustave Flaubert that chronicles the life of Frédéric Moreau, a young man who moves to Paris during the French Revolution of 1848. The novel explores Frédéric’s relationships, his unrequited love for Madame Arnoux, and his attempts to navigate the political and social upheavals of the time. Flaubert offers a detailed and critical portrait of the French bourgeoisie, highlighting the disillusionment and failure of both personal and political aspirations. The novel’s depiction of youthful idealism, romantic disappointment, and the futility of ambition has made it one of the most influential works of French literature, marking it as a timeless commentary on human nature and society.",
       "publisher": "Michel Lévy Frères",
-      "genre": [
+      "genres": [
         "Realist Novel"
       ],
       "year": 1869
@@ -1016,7 +1017,7 @@ export class BookService {
       "shortDescription": "A collection of poems drawing on Andalusian folklore, blending surrealism with traditional ballad forms.",
       "fullDescription": "Gypsy Ballads (Romancero gitano) is a collection of poems by the Spanish poet Federico García Lorca, blending elements of traditional Andalusian folk ballads with surrealist imagery. The poems explore themes of love, death, and the gypsy identity, using vivid, dreamlike language to evoke the landscape and culture of Andalusia. Lorca’s lyrical style captures the tension between the modern world and the ancient, marginalized culture of the gypsies, creating a haunting and evocative portrayal of a people caught between freedom and fate. The collection remains one of the most celebrated works of Spanish poetry, known for its emotional intensity and rich symbolism.",
       "publisher": "Ediciones del Sur",
-      "genre": [
+      "genres": [
         "Poetry"
       ],
       "year": 1928
@@ -1046,7 +1047,7 @@ export class BookService {
       "shortDescription": "The multi-generational story of the Buendía family in the fictional town of Macondo.",
       "fullDescription": "One Hundred Years of Solitude is a landmark novel of magical realism, chronicling the rise and fall of the Buendía family in the isolated town of Macondo. Gabriel García Márquez blends the extraordinary with the everyday, crafting a world where reality and fantasy coexist. Themes of love, power, war, and fate intertwine with the novel’s cyclical sense of time, and Márquez explores the universal forces of history, memory, and myth. The novel’s lush, poetic language and intricate narrative structure make it one of the most acclaimed works of world literature, offering profound reflections on Latin American history and culture.",
       "publisher": "Editorial Sudamericana",
-      "genre": [
+      "genres": [
         "Magic Realism"
       ],
       "year": 1967
@@ -1076,7 +1077,7 @@ export class BookService {
       "shortDescription": "A love story spanning more than fifty years between Fermina Daza and Florentino Ariza.",
       "fullDescription": "Love in the Time of Cholera tells the story of Florentino Ariza and Fermina Daza, whose love endures for over half a century despite obstacles, separations, and Fermina’s marriage to another man. Set in a Caribbean port town, the novel explores the power of love, desire, and memory, juxtaposing romantic ideals with the harsh realities of aging and loss. García Márquez infuses the narrative with his signature magical realism, where the line between passion and obsession blurs, creating a profound exploration of human emotions. The novel is both a tribute to enduring love and a meditation on the complexities of life and time.",
       "publisher": "Alfred A. Knopf",
-      "genre": [
+      "genres": [
         "Magic Realism",
         "Love Story"
       ],
@@ -1108,7 +1109,7 @@ export class BookService {
       "shortDescription": "A scholar makes a pact with the devil in exchange for unlimited knowledge and worldly pleasures.",
       "fullDescription": "Faust is Goethe’s magnum opus, a two-part tragedy that follows the life of Dr. Faust, a scholar who, dissatisfied with his intellectual pursuits, makes a pact with Mephistopheles (the devil) to experience all that life has to offer. Part I focuses on Faust’s pursuit of worldly pleasures and love, particularly his tragic relationship with Gretchen. In Part II, Faust’s journey expands into political and philosophical realms as he seeks ultimate meaning and redemption. Goethe’s work explores themes of ambition, temptation, knowledge, and salvation, blending Christian theology, classical myth, and humanist philosophy in a sweeping, poetic masterpiece.",
       "publisher": "Cotta",
-      "genre": [
+      "genres": [
         "Tragedy",
         "Drama"
       ],
@@ -1139,7 +1140,7 @@ export class BookService {
       "shortDescription": "A satire about a man who buys deceased serfs’ names from landowners to exploit bureaucratic loopholes.",
       "fullDescription": "Dead Souls is a biting satire of Russian society, following the adventures of Pavel Ivanovich Chichikov, a middle-class man with a grand, deceitful scheme: he travels through the countryside, purchasing the ownership of \"dead souls\"—serfs who have died but are still listed as living on official records. Chichikov plans to use these phantom serfs as collateral for loans, exploiting the bureaucratic inefficiencies of the Russian feudal system. Gogol’s novel skewers the greed, corruption, and moral decay of the Russian aristocracy and landowners, blending dark humor with a tragic view of the human condition. Dead Souls remains one of the most important works of Russian literature, offering a satirical critique of societal ills.",
       "publisher": "Russian Messenger",
-      "genre": [
+      "genres": [
         "Satirical Novel"
       ],
       "year": 1842
@@ -1169,7 +1170,7 @@ export class BookService {
       "shortDescription": "A surreal, allegorical tale of Oskar Matzerath, a boy who refuses to grow up in Nazi-era Germany.",
       "fullDescription": "The Tin Drum is the first book in Günter Grass’s Danzig Trilogy and one of the most significant works of postwar German literature. The novel follows the life of Oskar Matzerath, a child prodigy who, at the age of three, decides to stop growing and remains a permanent observer of the world around him. His tin drum becomes his way of expressing his protest against the horrors of life, especially during the rise of Nazism and World War II. Grass uses Oskar’s grotesque and surreal experiences as an allegory for the moral collapse of Germany during the 20th century. The novel's rich, multi-layered narrative and blending of the absurd with historical reality make it a landmark of modernist literature.",
       "publisher": "Luchterhand",
-      "genre": [
+      "genres": [
         "Magic Realism",
         "Modernist Fiction"
       ],
@@ -1200,7 +1201,7 @@ export class BookService {
       "shortDescription": "A Brazilian epic exploring the life of Riobaldo, a jagunço (bandit) in the backlands of Brazil.",
       "fullDescription": "The Devil to Pay in the Backlands (Grande Sertão: Veredas) is a Brazilian classic that tells the story of Riobaldo, a former bandit, as he reflects on his violent past in the harsh and desolate sertão (backlands) of Brazil. The novel, narrated in a stream-of-consciousness style, explores themes of fate, love, and the struggle between good and evil. Riobaldo’s quest for understanding leads him to make a pact with the devil, but the novel blurs the line between the real and the supernatural, creating a deep, philosophical inquiry into the nature of existence. Guimarães Rosa’s poetic language and innovative narrative structure have made the novel a cornerstone of Brazilian literature, revered for its complexity and profound exploration of human nature.",
       "publisher": "José Olympio",
-      "genre": [
+      "genres": [
         "Modernist Novel",
         "Regionalism"
       ],
@@ -1231,7 +1232,7 @@ export class BookService {
       "shortDescription": "A psychological exploration of a starving writer’s descent into madness and desperation.",
       "fullDescription": "Hunger is Knut Hamsun’s groundbreaking novel that tells the story of an unnamed writer struggling with poverty and hunger in the streets of Oslo. The novel is one of the earliest examples of psychological fiction, focusing on the protagonist’s internal monologue as he descends into delusion and desperation. Hamsun’s vivid portrayal of the protagonist’s physical and mental deterioration creates a harrowing portrait of isolation, alienation, and the fragility of the human condition. The novel’s influence can be seen in later works of existential literature, and its stark, uncompromising depiction of the human psyche has earned it a lasting place in world literature.",
       "publisher": "P.G. Philipsens Forlag",
-      "genre": [
+      "genres": [
         "Psychological Fiction"
       ],
       "year": 1890
@@ -1261,7 +1262,7 @@ export class BookService {
       "shortDescription": "An old Cuban fisherman’s struggle to catch a giant marlin in the Gulf Stream.",
       "fullDescription": "The Old Man and the Sea is one of Hemingway’s most famous works, telling the simple yet profound story of Santiago, an aging Cuban fisherman who embarks on an epic battle to catch a giant marlin. Despite his age and weakness, Santiago is determined to prove his worth and skill, engaging in a grueling fight with the marlin over several days. The novella explores themes of perseverance, pride, defeat, and the human condition, with Hemingway’s trademark spare, direct prose. The novel won the Pulitzer Prize in 1953 and is considered one of the most powerful narratives of man’s struggle against nature, life, and himself.",
       "publisher": "Charles Scribner's Sons",
-      "genre": [
+      "genres": [
         "Novella",
         "Adventure Fiction"
       ],
@@ -1292,7 +1293,7 @@ export class BookService {
       "shortDescription": "The epic poem of the Trojan War, focusing on the wrath of Achilles.",
       "fullDescription": "The Iliad is one of the foundational works of Western literature, an epic poem that tells the story of the final weeks of the Trojan War. The poem focuses on the hero Achilles and his wrath after being dishonored by Agamemnon, the Greek leader. Homer’s depiction of the gods, warriors, and battles offers a rich, multi-dimensional portrait of heroism, honor, and the human cost of war. The themes of fate, mortality, and the nature of conflict resonate throughout the narrative, which has influenced countless works of literature, art, and philosophy since its creation. The Iliad remains a timeless exploration of the human condition in the face of violence and tragedy.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Epic Poetry"
       ],
       "year": -735
@@ -1322,7 +1323,7 @@ export class BookService {
       "shortDescription": "The epic journey of Odysseus as he returns home after the Trojan War.",
       "fullDescription": "The Odyssey follows the Greek hero Odysseus as he embarks on a ten-year journey home to Ithaca after the fall of Troy. Along the way, he encounters mythical creatures, vengeful gods, and tests of both his intellect and strength. The epic explores themes of perseverance, loyalty, cunning, and the longing for home, while also providing insight into the nature of heroism and the complex relationships between mortals and the gods. Homer’s Odyssey has had an immense influence on Western storytelling, establishing the archetypal “hero’s journey” that has become a timeless narrative form.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Epic Poetry"
       ],
       "year": -800
@@ -1352,7 +1353,7 @@ export class BookService {
       "shortDescription": "A woman’s realization of her restricted role in marriage and her decision to assert her independence.",
       "fullDescription": "A Doll’s House is a groundbreaking play by Henrik Ibsen that centers on Nora Helmer, a seemingly happy housewife, who begins to question her subservient role within her marriage and society. Set in a patriarchal society, Nora’s realization that her life has been like that of a doll in a dollhouse leads to her ultimate decision to leave her husband and children in search of personal freedom and identity. The play caused a sensation upon its release for its portrayal of the struggles of women and has since become one of the defining works of feminist literature, addressing themes of autonomy, marriage, and societal expectations.",
       "publisher": "Gyldendal",
-      "genre": [
+      "genres": [
         "Drama",
         "Realism"
       ],
@@ -1383,7 +1384,7 @@ export class BookService {
       "shortDescription": "The life of Leopold Bloom over the course of a single day, written in a stream-of-consciousness style.",
       "fullDescription": "Ulysses is a modernist masterpiece that parallels Homer’s Odyssey, recounting the events of a single day (June 16, 1904) in the life of Leopold Bloom as he navigates Dublin. Through his interactions with others, including his wife Molly and the writer Stephen Dedalus, the novel explores the minutiae of daily life, as well as profound themes of identity, consciousness, love, and human existence. Joyce’s innovative use of stream-of-consciousness, fragmented narrative, and shifting literary styles have made Ulysses one of the most complex and influential works in modern literature, challenging traditional forms of storytelling and narrative.",
       "publisher": "Sylvia Beach",
-      "genre": [
+      "genres": [
         "Modernist Novel"
       ],
       "year": 1922
@@ -1413,7 +1414,7 @@ export class BookService {
       "shortDescription": "A collection of Kafka's short stories, highlighting themes of alienation, existential anxiety, and the absurdity of modern life.",
       "fullDescription": "Franz Kafka’s Stories encompass a range of works that delve into the complexities of human existence, often characterized by surreal and nightmarish elements. Kafka's writing explores themes of alienation, guilt, and the absurdity of bureaucratic systems, reflecting his own struggles with identity and societal expectations. Notable stories include \"The Metamorphosis\", where a man wakes to find himself transformed into a giant insect, and \"The Judgment\", which addresses familial conflict and existential dread. Kafka’s prose is marked by a sense of inevitability and anxiety, often leaving readers with unresolved questions. His unique blend of reality and the fantastical has solidified his status as one of the most significant literary figures of the 20th century, with profound influences on existentialism and modern literature.",
       "publisher": "Various, including Schocken Books",
-      "genre": [
+      "genres": [
         "Short Stories",
         "Existential Fiction"
       ],
@@ -1444,7 +1445,7 @@ export class BookService {
       "shortDescription": "A man is arrested and prosecuted by a mysterious, oppressive bureaucracy without ever learning his crime.",
       "fullDescription": "The Trial is a haunting novel that follows the story of Josef K., a bank clerk who is arrested by an unknown authority for an unspecified crime. As K. attempts to navigate a labyrinthine legal system, he is met with increasingly absurd and opaque bureaucratic obstacles, symbolizing the existential anxiety of modern life. Kafka’s novel is a powerful exploration of themes such as guilt, powerlessness, and the search for meaning in an indifferent universe. The nightmarish quality of The Trial reflects the disorienting and dehumanizing forces of institutional authority, making it one of the most influential works of 20th-century existential literature.",
       "publisher": "Verlag Die Schmiede",
-      "genre": [
+      "genres": [
         "Existential Fiction",
         "Absurdist Fiction"
       ],
@@ -1475,7 +1476,7 @@ export class BookService {
       "shortDescription": "A man’s futile attempts to gain access to a mysterious authority in a village controlled by a distant castle.",
       "fullDescription": "The Castle is an unfinished novel by Franz Kafka that tells the story of K., a land surveyor who arrives in a village under the control of a looming, inaccessible castle. Despite his efforts, K. is repeatedly thwarted in his attempts to gain entry to the castle or understand the bureaucratic forces that govern the village. The novel explores themes of alienation, the absurdity of bureaucracy, and the individual’s futile search for purpose and control in an incomprehensible world. Kafka’s allegorical narrative style captures the existential struggles of modern life, where systems of power and authority remain distant and unapproachable, creating a pervasive sense of disempowerment.",
       "publisher": "Kurt Wolff Verlag",
-      "genre": [
+      "genres": [
         "Existential Fiction",
         "Absurdist Fiction"
       ],
@@ -1506,7 +1507,7 @@ export class BookService {
       "shortDescription": "A classical Indian play about love, separation, and divine intervention between a king and a nymph.",
       "fullDescription": "The Recognition of Shakuntala is a classical Sanskrit drama by the poet Kalidasa. The play tells the story of King Dushyanta, who falls in love with the nymph Shakuntala but forgets her after a sage’s curse. Shakuntala’s love for the king, their subsequent separation, and eventual reunion through divine intervention are central to the plot. Kalidasa’s work is celebrated for its lyrical beauty, rich imagery, and delicate portrayal of human emotions, blending romantic and mythological elements. The Recognition of Shakuntala remains one of the most important works in Indian literature, admired for its depth of feeling and spiritual themes.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Sanskrit Drama"
       ],
       "year": 150
@@ -1536,7 +1537,7 @@ export class BookService {
       "shortDescription": "A man in post-war Japan contemplates life, family, and mortality as he grows older.",
       "fullDescription": "The Sound of the Mountain is a quiet, introspective novel by Yasunari Kawabata that captures the inner life of Shingo Ogata, an aging businessman living in post-World War II Japan. As he grapples with the passage of time, the disintegration of his family, and his own sense of mortality, Shingo becomes more attuned to the natural world and the fleeting beauty of life. Kawabata’s sensitive portrayal of a man facing the existential questions of aging and death is rendered in a poetic and minimalist style, reflecting the themes of transience and introspection that permeate much of modern Japanese literature.",
       "publisher": "Shinchosha",
-      "genre": [
+      "genres": [
         "Psychological Fiction",
         "Modern Japanese Literature"
       ],
@@ -1567,7 +1568,7 @@ export class BookService {
       "shortDescription": "The story of an intellectual who seeks to live more freely under the influence of his lively and uninhibited companion, Zorba.",
       "fullDescription": "Zorba the Greek is a philosophical novel that follows the friendship between a scholarly, introspective narrator and his larger-than-life companion, Alexis Zorba. Through their interactions, the narrator learns to embrace life more fully, moving beyond intellectual detachment and embracing the spontaneity, passion, and chaos of human existence. Zorba’s exuberant personality and philosophy of life stand in contrast to the narrator’s restrained approach, highlighting themes of freedom, fate, and the search for meaning in an unpredictable world. Nikos Kazantzakis’s novel is celebrated for its exploration of the human condition and its celebration of the joy and struggle of living.",
       "publisher": "A. Karatzas & Co.",
-      "genre": [
+      "genres": [
         "Philosophical Novel"
       ],
       "year": 1946
@@ -1597,7 +1598,7 @@ export class BookService {
       "shortDescription": "A young man torn between his love for his mother and his romantic relationships.",
       "fullDescription": "Sons and Lovers is a semi-autobiographical novel by D. H. Lawrence, depicting the life of Paul Morel, a young man growing up in a working-class family in the English Midlands. Paul's deep emotional bond with his mother, Gertrude, interferes with his ability to form healthy romantic relationships, leading to intense inner conflict and psychological struggle. The novel explores themes of family, class, and sexual repression, as well as the psychological complexities of a son's attachment to his mother. Lawrence’s raw portrayal of the tensions within familial relationships broke new ground in English literature, contributing to his reputation as one of the 20th century's most significant writers.",
       "publisher": "Duckworth",
-      "genre": [
+      "genres": [
         "Psychological Fiction"
       ],
       "year": 1913
@@ -1627,7 +1628,7 @@ export class BookService {
       "shortDescription": "A tale of a stubborn Icelandic farmer’s fight for independence amidst hardship.",
       "fullDescription": "Independent People is a stark, epic novel about the life of Bjartur of Summerhouses, an Icelandic sheep farmer who is fiercely determined to live as an independent man. Set in rural Iceland in the early 20th century, the novel chronicles Bjartur’s relentless struggle to maintain his autonomy, even at the cost of his relationships with his family and his own well-being. Halldór Laxness uses Bjartur’s story as a lens to examine broader themes of human resilience, the harshness of nature, and the price of independence in an unforgiving world. The novel is considered a classic of Icelandic literature and earned Laxness the Nobel Prize in Literature in 1955.",
       "publisher": "Vaka-Helgafell",
-      "genre": [
+      "genres": [
         "Social Realism"
       ],
       "year": 1934
@@ -1654,7 +1655,7 @@ export class BookService {
       "shortDescription": "A collection of Leopardi's lyrical poems, exploring themes of nature, love, and existential melancholy.",
       "fullDescription": "Giacomo Leopardi’s Poems reflect the deep philosophical and emotional currents that define his work, showcasing his brilliance as one of Italy's greatest poets. Written during the early 19th century, his poetry grapples with themes of human suffering, the transience of beauty, and the existential despair of modern life. Leopardi often expresses a profound sense of solitude and longing, capturing the tension between idealism and the harsh realities of existence. His most famous poems, such as \"L'infinito\" and \"A Silvia\", illustrate his masterful use of imagery and lyrical language, conveying a sense of both awe and sorrow. Through his contemplative exploration of nature, love, and the human condition, Leopardi's poetry resonates with readers, offering insights into the struggles of the human soul.",
       "publisher": "Various, including Penguin Classics",
-      "genre": [
+      "genres": [
         "Poetry"
       ],
       "year": 1818
@@ -1681,7 +1682,7 @@ export class BookService {
       "shortDescription": "A woman writer’s fragmented mental state reflected in her multiple notebooks.",
       "fullDescription": "The Golden Notebook is a groundbreaking novel by Doris Lessing, focusing on the life of Anna Wulf, a writer who struggles with mental fragmentation and emotional turmoil. Anna records her experiences in four separate notebooks, each representing different aspects of her life, from politics to love. These narratives are ultimately brought together in the \"golden notebook\" in a bid for coherence and unity. Lessing’s novel is a complex exploration of identity, mental breakdown, and the limitations of traditional narrative structures. The book is also a key work of feminist literature, addressing issues such as the role of women in society, personal freedom, and political commitment.",
       "publisher": "Michael Joseph",
-      "genre": [
+      "genres": [
         "Feminist Fiction",
         "Modernist Novel"
       ],
@@ -1709,7 +1710,7 @@ export class BookService {
       "shortDescription": "The adventures of a strong, unconventional young girl living without parents.",
       "fullDescription": "Pippi Longstocking is the first in a series of children’s books by Astrid Lindgren, featuring the independent and mischievous Pippi, a nine-year-old girl with superhuman strength. Living alone in Villa Villekulla with her monkey and horse, Pippi rejects conventional norms and delights in adventures that subvert authority and challenge societal expectations. Lindgren’s creation of Pippi, with her unrestrained imagination, rebellious spirit, and unorthodox way of life, has made her an enduring figure in children’s literature, inspiring generations of readers with her sense of freedom and empowerment.",
       "publisher": "Rabén & Sjögren",
-      "genre": [
+      "genres": [
         "Children’s Fiction"
       ],
       "year": 1945
@@ -1736,7 +1737,7 @@ export class BookService {
       "shortDescription": "A man’s descent into madness, revealing the social and political corruption around him.",
       "fullDescription": "Diary of a Madman is a seminal work in modern Chinese literature, written by Lu Xun, often hailed as the father of modern Chinese fiction. The story is presented as the diary of a man who becomes increasingly paranoid, convinced that those around him are cannibals. His madness is a metaphor for the moral and social corruption he sees in society. Through this harrowing tale, Lu Xun critiques the feudal traditions and oppressive social structures of early 20th-century China. The story's exploration of madness as a form of protest against injustice made it a powerful and influential work in the May Fourth Movement, a cultural revolution that sought to modernize China.",
       "publisher": "New Youth",
-      "genre": [
+      "genres": [
         "Short Story",
         "Modern Chinese Literature"
       ],
@@ -1767,7 +1768,7 @@ export class BookService {
       "shortDescription": "An allegorical novel tracing humanity’s spiritual journey through five generations.",
       "fullDescription": "Children of Gebelawi (also known as Children of the Alley) is one of Naguib Mahfouz’s most controversial works, presenting an allegorical history of humanity through the lives of five generations living in an Egyptian alley. The novel’s characters and their stories symbolize key figures and narratives from the Abrahamic religions, including Adam, Moses, Jesus, and Muhammad. Mahfouz uses these allegories to explore issues of faith, power, justice, and human progress. Banned in many countries for its perceived religious implications, Children of Gebelawi remains a landmark in Arabic literature, showcasing Mahfouz’s ability to intertwine political, spiritual, and social commentary in his fiction.",
       "publisher": "Al-Ahram",
-      "genre": [
+      "genres": [
         "Allegorical Fiction",
         "Modern Arabic Literature"
       ],
@@ -1795,7 +1796,7 @@ export class BookService {
       "shortDescription": "The decline of a wealthy German merchant family over four generations.",
       "fullDescription": "Buddenbrooks is a sweeping family saga that traces the rise and fall of a wealthy German merchant family over the course of four generations. Thomas Mann’s novel chronicles the shifting fortunes of the Buddenbrooks, from their height of prosperity to their eventual decline, focusing on the conflicts between individual desires and family duty. Through detailed character portraits and keen social observation, Mann examines the psychological and moral struggles faced by the family members as they confront societal change, financial hardship, and personal crises. Buddenbrooks is celebrated for its richly drawn characters and its exploration of the tensions between tradition and modernity in 19th-century European society.",
       "publisher": "Fischer Verlag",
-      "genre": [
+      "genres": [
         "Family Saga"
       ],
       "year": 1901
@@ -1822,7 +1823,7 @@ export class BookService {
       "shortDescription": "A young man’s extended stay in a tuberculosis sanatorium leads to philosophical introspection.",
       "fullDescription": "The Magic Mountain is a monumental novel that follows Hans Castorp, a young engineer, as he visits a tuberculosis sanatorium in the Swiss Alps and ends up staying for seven years. The novel uses the isolated sanatorium as a microcosm for pre-World War I Europe, exploring themes of time, illness, death, and the search for meaning in life. Castorp’s interactions with various patients and doctors lead to deep philosophical reflections on the nature of existence, love, and the clash between opposing ideologies, such as humanism and radicalism. Thomas Mann’s work is widely regarded as one of the defining novels of the 20th century for its intellectual depth and modernist narrative style.",
       "publisher": "S. Fischer Verlag",
-      "genre": [
+      "genres": [
         "Philosophical Novel",
         "Modernist Fiction"
       ],
@@ -1853,7 +1854,7 @@ export class BookService {
       "shortDescription": "The obsessive quest of Captain Ahab to hunt the elusive white whale, Moby Dick.",
       "fullDescription": "Moby-Dick is a classic of American literature, telling the story of Ishmael, a sailor aboard the whaling ship Pequod, captained by the vengeful Ahab. Ahab's singular obsession is to kill the white whale, Moby Dick, who had previously maimed him by biting off his leg. The novel explores complex themes such as revenge, fate, human ambition, and the power of nature, weaving in philosophical musings and detailed descriptions of whaling life. Herman Melville's masterpiece has been lauded for its symbolic richness and its reflections on the human condition, though it was underappreciated during his lifetime.",
       "publisher": "Richard Bentley",
-      "genre": [
+      "genres": [
         "Philosophical Fiction",
         "Adventure"
       ],
@@ -1881,7 +1882,7 @@ export class BookService {
       "shortDescription": "A collection of personal reflections on life, society, and human nature.",
       "fullDescription": "Michel de Montaigne’s Essays is one of the foundational texts of the modern essay form. Written in a candid and personal style, Montaigne reflects on a wide range of topics, including friendship, education, death, and the human condition. The essays are deeply introspective, blending philosophical thought with personal anecdote, and often challenge established conventions. Montaigne’s skepticism and emphasis on self-reflection influenced subsequent generations of writers and philosophers, making his Essays a timeless work that continues to resonate with readers for its exploration of what it means to be human.",
       "publisher": "Simon Millanges",
-      "genre": [
+      "genres": [
         "Philosophy",
         "Personal Essays"
       ],
@@ -1909,7 +1910,7 @@ export class BookService {
       "shortDescription": "A sweeping historical novel that intertwines personal and political narratives set against the backdrop of World War II in Italy.",
       "fullDescription": "History, by Elsa Morante, is an ambitious and poignant novel that captures the tumultuous events of World War II and its aftermath through the lives of its characters. The story follows the life of a woman named Ida and her family, exploring themes of love, loss, and the impact of history on individual lives. As Morante delves into the emotional landscapes of her characters, she also paints a vivid picture of the sociopolitical realities of Italy during this period. The novel intertwines the personal and the historical, examining how the war shapes relationships and identities. Morante’s lyrical prose and deep empathy for her characters create a powerful narrative that resonates with readers, inviting them to reflect on the broader human experience amidst the chaos of history. History is considered one of Morante's masterpieces and an essential work of Italian literature.",
       "publisher": "Various, including Harcourt Brace Jovanovich",
-      "genre": [
+      "genres": [
         "Historical Fiction"
       ],
       "year": 1974
@@ -1939,7 +1940,7 @@ export class BookService {
       "shortDescription": "A former slave is haunted by the ghost of her dead daughter.",
       "fullDescription": "Beloved is a powerful novel by Toni Morrison that explores the psychological trauma of slavery and its lingering effects on those who survive it. The story is set after the American Civil War and follows Sethe, an escaped slave, who is haunted by the ghost of her dead daughter, Beloved. The novel shifts between past and present, recounting the horrors Sethe endured and the lengths she went to protect her children. Through its blend of magical realism and historical narrative, Beloved grapples with themes of memory, identity, and the haunting legacies of trauma. The novel won the Pulitzer Prize for Fiction in 1988 and solidified Morrison’s reputation as one of America’s greatest writers.",
       "publisher": "Alfred A. Knopf",
-      "genre": [
+      "genres": [
         "Historical Fiction",
         "Magical Realism"
       ],
@@ -1970,7 +1971,7 @@ export class BookService {
       "shortDescription": "The life and loves of Prince Genji in the imperial court of Heian Japan.",
       "fullDescription": "Often regarded as the world’s first novel, The Tale of Genji offers a detailed and poetic portrayal of court life in Heian Japan. The novel follows the life of the \"Shining Prince\" Genji, his romantic affairs, and his personal struggles, set against the backdrop of the Japanese imperial court. Written by Murasaki Shikibu, a lady-in-waiting, the novel provides a window into the aesthetics, politics, and social customs of the time. With its sophisticated exploration of human emotions and relationships, The Tale of Genji remains one of Japan’s most beloved literary works, celebrated for its depth of character and sensitivity to the ephemeral beauty of life.",
       "publisher": "Various (Ancient Japanese Text)",
-      "genre": [
+      "genres": [
         "Classic Japanese Literature",
         "Romance"
       ],
@@ -2001,7 +2002,7 @@ export class BookService {
       "shortDescription": "An unfinished novel about an intellectual man navigating a crumbling society.",
       "fullDescription": "The Man Without Qualities is an unfinished modernist masterpiece by Austrian writer Robert Musil. Set in the last days of the Austro-Hungarian Empire, the novel follows Ulrich, a man of reason and intellect, who remains emotionally detached from the world around him. As Ulrich navigates a decaying society on the brink of World War I, the novel reflects on the collapse of traditional values and the philosophical questions of modern existence. Musil’s work is known for its deep psychological insight, irony, and commentary on the absurdities of modern life. Despite its unfinished state, The Man Without Qualities is considered one of the most important novels of the 20th century.",
       "publisher": "Rowohlt Verlag",
-      "genre": [
+      "genres": [
         "Modernist Fiction",
         "Philosophical Novel"
       ],
@@ -2029,7 +2030,7 @@ export class BookService {
       "shortDescription": "The disturbing obsession of a middle-aged man with a 12-year-old girl.",
       "fullDescription": "Lolita is one of the most controversial novels in modern literature, written by Russian-American author Vladimir Nabokov. The novel is narrated by Humbert Humbert, a middle-aged literature professor, who becomes obsessed with Dolores Haze, a 12-year-old girl he nicknames Lolita. Humbert's obsession leads him to manipulate and control Lolita, creating a disturbing and morally complex narrative. Through Humbert's lyrical yet unreliable narration, Nabokov explores themes of obsession, guilt, and the manipulation of innocence. While its subject matter has sparked significant debate, Lolita is also praised for its literary craftsmanship, rich language, and provocative exploration of morality and desire.",
       "publisher": "Olympia Press",
-      "genre": [
+      "genres": [
         "Psychological Fiction"
       ],
       "year": 1955
@@ -2059,7 +2060,7 @@ export class BookService {
       "shortDescription": "A chilling portrayal of a totalitarian regime’s control over thought and reality.",
       "fullDescription": "George Orwell’s Nineteen Eighty-Four is a dystopian novel set in a totalitarian society where the Party, led by Big Brother, exercises absolute control over all aspects of life, including thought, language, and history. The novel follows Winston Smith, a government worker who begins to question the oppressive regime and secretly seeks freedom and truth. Orwell’s work examines themes of surveillance, censorship, propaganda, and the manipulation of truth, making it one of the most influential and chilling portrayals of a dystopian future. Nineteen Eighty-Four has had a profound impact on modern political thought, with its concepts of \"Big Brother,\" \"thoughtcrime\" and \"doublethink\" becoming part of contemporary discourse on totalitarianism and authoritarianism.",
       "publisher": "Secker & Warburg",
-      "genre": [
+      "genres": [
         "Dystopian Fiction",
         "Political Fiction"
       ],
@@ -2087,7 +2088,7 @@ export class BookService {
       "shortDescription": "A collection of mythological transformations, from the creation of the world to Julius Caesar.",
       "fullDescription": "Ovid's Metamorphoses is an epic poem that chronicles over 250 Greek and Roman myths, all linked by the theme of transformation. Spanning from the world's creation to the deification of Julius Caesar, it includes iconic stories like Daphne and Apollo, Pygmalion, and the Trojan War. The poem explores themes of love, power, and change, and has influenced countless works of literature and art throughout history. Despite its mythological content, Metamorphoses offers a commentary on human nature and Roman society, making it a timeless classic of Western literature.",
       "publisher": "Various ancient publishers",
-      "genre": [
+      "genres": [
         "Epic Poetry",
         "Mythology"
       ],
@@ -2118,7 +2119,7 @@ export class BookService {
       "shortDescription": "A fragmented, introspective work of existential musings and reflections.",
       "fullDescription": "The Book of Disquiet is a deeply introspective and existential work by Portuguese writer Fernando Pessoa, written under the heteronym Bernardo Soares. Composed of disconnected and fragmentary reflections, the book reveals the inner life of a man who contemplates his own insignificance in the universe. Through its meditations on solitude, dreams, and the disillusionment of everyday life, The Book of Disquiet captures the alienation and uncertainty of modern existence. Though largely unpublished during Pessoa’s lifetime, the work has since gained recognition as a masterpiece of modernist literature, exploring themes of identity and the human condition in an enigmatic and poetic style.",
       "publisher": "Published posthumously",
-      "genre": [
+      "genres": [
         "Modernist Fiction",
         "Philosophical Fiction"
       ],
@@ -2149,7 +2150,7 @@ export class BookService {
       "shortDescription": "A collection of Poe's dark and imaginative short stories, exploring themes of madness, mortality, and the macabre.",
       "fullDescription": "Edgar Allan Poe’s Tales is a quintessential anthology that showcases his mastery of the short story form and his profound impact on the genres of horror and Gothic literature. This collection includes some of his most famous works, such as \"The Tell-Tale Heart\", \"The Fall of the House of Usher\" and \"The Cask of Amontillado\", which delve into the depths of the human psyche, exploring themes of guilt, obsession, and the supernatural. Poe's writing is characterized by its vivid imagery, intricate plots, and a haunting atmosphere that captivates readers. His unique ability to blend psychological tension with elements of the bizarre and grotesque has left an indelible mark on literature, influencing countless writers and establishing the foundation for modern horror fiction. With Tales, readers are invited into a world where reality blurs with nightmare, making it an essential collection for fans of the macabre.",
       "publisher": "Various, including Penguin Classics",
-      "genre": [
+      "genres": [
         "Horror",
         "Gothic Fiction"
       ],
@@ -2177,7 +2178,7 @@ export class BookService {
       "shortDescription": "A vast exploration of memory, time, and society in early 20th-century France.",
       "fullDescription": "In Search of Lost Time (also known as Remembrance of Things Past) is Marcel Proust’s monumental work, comprising seven volumes. Through the narrator’s journey of recalling his past, particularly triggered by the famous \"madeleine moment\", the novel reflects on time, memory, and the nature of human experience. The protagonist’s experiences of love, jealousy, art, and society are explored in immense detail, often with lyrical and philosophical reflections. Proust's exploration of involuntary memory and the passage of time has made this work a touchstone for modernist literature. Its meticulous prose and introspective depth have secured In Search of Lost Time a place among the greatest literary achievements of the 20th century.",
       "publisher": "Grasset & Gallimard",
-      "genre": [
+      "genres": [
         "Modernist Fiction",
         "Philosophical Fiction"
       ],
@@ -2205,7 +2206,7 @@ export class BookService {
       "shortDescription": "A satirical series about the adventures of two giants and their encounters with the absurdities of life.",
       "fullDescription": "Gargantua and Pantagruel is a series of five novels written by François Rabelais, following the lives of two giants, Gargantua and his son Pantagruel. Through their exaggerated, comical adventures, Rabelais critiques various aspects of society, including education, religion, and politics. The work is filled with bawdy humor, grotesque imagery, and satirical commentary, reflecting the Renaissance humanist spirit and Rabelais’s deep belief in intellectual freedom and skepticism of authority. While the text is playful and often absurd, it also delves into serious philosophical questions about human existence, making it a richly layered work that has influenced numerous writers and thinkers.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Satirical Fiction"
       ],
       "year": 1533
@@ -2232,7 +2233,7 @@ export class BookService {
       "shortDescription": "A haunting tale of a man’s search for his father in a ghostly, surreal Mexican village.",
       "fullDescription": "Juan Rulfo’s Pedro Páramo is a cornerstone of Latin American literature and a pioneering work of magical realism. The novel follows Juan Preciado as he journeys to the village of Comala to find his estranged father, Pedro Páramo, only to discover that the town is inhabited by ghosts and memories. The novel’s fragmented narrative and dreamlike atmosphere blur the boundaries between life and death, past and present, creating a haunting exploration of loss, guilt, and the haunting presence of the past. Pedro Páramo is considered a landmark work for its innovative narrative style and its profound impact on subsequent generations of Latin American writers, including Gabriel García Márquez.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Magical Realism",
         "Fiction"
       ],
@@ -2263,7 +2264,7 @@ export class BookService {
       "shortDescription": "A collection of spiritual stories and teachings that guide the reader toward divine love.",
       "fullDescription": "Rumi’s The Masnavi is one of the most revered works of Sufi literature, composed of six books of poetry that explore the soul’s journey toward God. Through allegorical stories, parables, and philosophical musings, Rumi delves into the nature of love, the self, and the divine. The Masnavi serves as both a spiritual guide and a literary masterpiece, blending poetic beauty with profound insights into human nature and spirituality. Often referred to as the \"Quran in Persian\", Rumi’s work has resonated with readers across cultures and centuries, earning him a lasting legacy as one of the greatest poets and spiritual teachers in history.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Sufi Poetry",
         "Spiritual Literature"
       ],
@@ -2291,7 +2292,7 @@ export class BookService {
       "shortDescription": "A tale of India’s history intertwined with the magical lives of children born at the moment of its independence.",
       "fullDescription": "Midnight’s Children is a sweeping, multi-generational novel that blends magical realism with historical fiction to tell the story of modern India. The novel's protagonist, Saleem Sinai, is born at the exact moment of India’s independence in 1947, and his life becomes inextricably linked with the country’s tumultuous history. Saleem and other children born at the stroke of midnight possess magical abilities, and through their stories, Rushdie explores themes of identity, nationhood, and memory. Midnight’s Children is lauded for its inventive narrative style, political commentary, and its use of magical realism to reflect on post-colonial India's complexities. The novel won the Booker Prize and later the Booker of Bookers, cementing Rushdie’s reputation as one of the most important writers of the 20th century.",
       "publisher": "Jonathan Cape",
-      "genre": [
+      "genres": [
         "Magical Realism",
         "Historical Fiction"
       ],
@@ -2319,7 +2320,7 @@ export class BookService {
       "shortDescription": "A collection of moral and ethical teachings written in verse.",
       "fullDescription": "Bostan (The Orchard) by Saadi Shirazi is a classic of Persian literature, consisting of didactic stories and poems that offer moral and spiritual guidance. Written in verse, the work covers a wide range of subjects, including justice, kindness, humility, and the nature of human existence. Saadi’s eloquent and wise reflections on life have made Bostan an enduring work, admired for its ethical insights and its poetic beauty. The text’s universal themes have resonated with readers beyond its Persian origins, earning Saadi a reputation as one of the great moral philosophers and poets of the medieval Islamic world.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Persian Poetry",
         "Philosophical Literature"
       ],
@@ -2347,7 +2348,7 @@ export class BookService {
       "shortDescription": "A Sudanese man returns home and reflects on colonialism and cultural identity.",
       "fullDescription": "Tayeb Salih’s Season of Migration to the North is a post-colonial novel that examines the complexities of identity, power, and cultural conflict. Narrated by a man returning to Sudan after studying in Europe, the novel explores the impact of colonialism on personal and national identity. Through its portrayal of the enigmatic character Mustafa Sa’eed and his destructive relationships with European women, Salih delves into the intersections of race, gender, and power. Season of Migration to the North is widely regarded as one of the most important Arabic novels of the 20th century, offering a nuanced exploration of the legacies of colonialism and the challenges of cultural hybridity.",
       "publisher": "Heinemann",
-      "genre": [
+      "genres": [
         "Post-Colonial Fiction"
       ],
       "year": 1966
@@ -2374,7 +2375,7 @@ export class BookService {
       "shortDescription": "A society descends into chaos when a mysterious blindness epidemic strikes.",
       "fullDescription": "Blindness by Nobel Prize-winning author José Saramago is a harrowing dystopian novel that explores the breakdown of civilization following an inexplicable epidemic of blindness. As an entire city succumbs to the affliction, social order disintegrates, and individuals are forced to confront the darker sides of human nature. The novel, written in Saramago's signature flowing prose, presents a chilling examination of morality, solidarity, and survival in the face of existential crisis. Blindness is both an allegory of societal collapse and a reflection on the human capacity for both cruelty and compassion when stripped of the structures of civilization.",
       "publisher": "Caminho",
-      "genre": [
+      "genres": [
         "Dystopian Fiction",
         "Philosophical Fiction"
       ],
@@ -2405,7 +2406,7 @@ export class BookService {
       "shortDescription": "The Prince of Denmark seeks revenge for his father’s murder, descending into madness and tragedy.",
       "fullDescription": "Hamlet is one of William Shakespeare’s most famous tragedies, centered around the young Prince of Denmark, who is driven to avenge his father’s murder by his uncle Claudius. As Hamlet wrestles with his conscience, sanity, and the corrupt world around him, the play explores themes of revenge, madness, betrayal, and the human condition. With its complex characters, philosophical soliloquies, and exploration of existential themes, Hamlet remains one of the most influential and performed works in the English literary canon. Shakespeare's use of rich language and deep psychological insight has ensured the play’s enduring significance for over four centuries.",
       "publisher": "First Folio",
-      "genre": [
+      "genres": [
         "Tragedy"
       ],
       "year": 1603
@@ -2435,7 +2436,7 @@ export class BookService {
       "shortDescription": "A tragic tale of an aging king's descent into madness after dividing his kingdom among his daughters.",
       "fullDescription": "In King Lear, Shakespeare tells the story of a monarch who foolishly divides his kingdom between two deceitful daughters, disowning the one daughter who truly loves him. As Lear gradually descends into madness, the play unfolds as a powerful exploration of family, betrayal, and the devastating consequences of pride and folly. The subplot, involving the nobleman Gloucester and his sons, mirrors the main story, reinforcing the themes of loyalty, justice, and suffering. King Lear is often regarded as one of Shakespeare’s greatest tragedies, with its profound meditation on human frailty and the consequences of moral blindness.",
       "publisher": "First Folio",
-      "genre": [
+      "genres": [
         "Tragedy"
       ],
       "year": 1608
@@ -2465,7 +2466,7 @@ export class BookService {
       "shortDescription": "A tale of jealousy and betrayal, where the Moorish general Othello is manipulated into believing his wife is unfaithful.",
       "fullDescription": "Othello is one of Shakespeare’s most intense and tragic plays, focusing on the destructive power of jealousy and the complexities of race and identity. Othello, a Moorish general in the Venetian army, is led to believe by his cunning ensign, Iago, that his wife Desdemona has been unfaithful. Consumed by jealousy, Othello’s descent into violence and self-destruction becomes inevitable, culminating in a tragic conclusion. The play is notable for its exploration of racial prejudice, manipulation, and the vulnerability of trust. Othello has remained relevant in discussions of race, power, and the dark side of human emotions.",
       "publisher": "First Folio",
-      "genre": [
+      "genres": [
         "Tragedy"
       ],
       "year": 1609
@@ -2495,7 +2496,7 @@ export class BookService {
       "shortDescription": "A Greek tragedy about a man who unwittingly fulfills a prophecy that he will kill his father and marry his mother.",
       "fullDescription": "Oedipus the King is one of the most famous plays of classical Greek literature, written by Sophocles. It tells the story of Oedipus, the king of Thebes, who is determined to uncover the truth about the murder of the previous king, only to discover that he himself is the killer. Unwittingly, Oedipus has fulfilled a prophecy that he would kill his father and marry his mother, leading to his tragic downfall. The play explores themes of fate, free will, and the limits of human understanding, and has been celebrated for its dramatic irony and psychological depth. Oedipus's relentless quest for truth and his subsequent realization of his fate remain powerful metaphors for human suffering and self-awareness.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Tragedy"
       ],
       "year": -430
@@ -2522,7 +2523,7 @@ export class BookService {
       "shortDescription": "The rise and fall of a young man from provincial France as he navigates love, politics, and ambition.",
       "fullDescription": "Stendhal’s The Red and the Black is a psychological and social novel set in post-Napoleonic France. It follows the ambitious young Julien Sorel, who seeks to rise above his humble origins through military and clerical success, symbolized by \"the red\" (the army) and \"the black\" (the church). Julien’s romance with the married Madame de Rênal and his later pursuit of power through the aristocratic Mathilde de la Mole lead to a series of tragic events, ultimately revealing the conflicts between individual desire and social constraints. The Red and the Black is notable for its exploration of the inner workings of its protagonist’s mind, as well as its critique of French society, making it a precursor to modern psychological and realist novels.",
       "publisher": "Levavasseur",
-      "genre": [
+      "genres": [
         "Historical Fiction",
         "Romance"
       ],
@@ -2550,7 +2551,7 @@ export class BookService {
       "shortDescription": "An experimental, humorous novel that chronicles the life and peculiar musings of Tristram Shandy.",
       "fullDescription": "Laurence Sterne’s The Life and Opinions of Tristram Shandy is a groundbreaking, unconventional novel that defies traditional narrative structure. Through a series of digressions, flashbacks, and comic interruptions, the narrator, Tristram Shandy, attempts to tell the story of his life, though he is often sidetracked by humorous observations and anecdotes. The novel’s playful structure and its exploration of consciousness and time were ahead of their time, influencing later modernist writers. Sterne’s wit, his use of metafiction, and his commentary on the act of storytelling itself have earned Tristram Shandy a lasting place in literary history as one of the first truly experimental novels.",
       "publisher": "Multiple",
-      "genre": [
+      "genres": [
         "Satirical Fiction",
         "Experimental Literature"
       ],
@@ -2578,7 +2579,7 @@ export class BookService {
       "shortDescription": "A psychological exploration of a man’s life, told through his reflections on his failed attempts to quit smoking.",
       "fullDescription": "Confessions of Zeno is a modernist novel by Italo Svevo that presents the introspective confessions of Zeno Cosini, an unreliable narrator who recounts his failed efforts to quit smoking. As Zeno reflects on his life, his relationships with his father, his wife, and his lover are revealed in a complex psychological portrait. The novel explores themes of addiction, self-deception, and existential anxiety, drawing heavily on the emerging field of psychoanalysis. Svevo’s portrayal of Zeno’s inner turmoil, his use of irony, and his blending of humor with deep psychological insight have made Confessions of Zeno a key work in early 20th-century literature.",
       "publisher": "Cappelli",
-      "genre": [
+      "genres": [
         "Modernist Fiction",
         "Psychological Fiction"
       ],
@@ -2609,7 +2610,7 @@ export class BookService {
       "shortDescription": "The adventures of Lemuel Gulliver as he visits strange lands, including Lilliput and Brobdingnag.",
       "fullDescription": "Gulliver’s Travels is a satirical adventure novel by Jonathan Swift that chronicles the voyages of Lemuel Gulliver to a series of fantastical lands. Each land serves as a vehicle for Swift’s sharp critiques of politics, human nature, and society. In Lilliput, Gulliver encounters a world of tiny people obsessed with petty conflicts, while in Brobdingnag, he is dwarfed by a race of giants. The novel also explores the flying island of Laputa and the land of the Houyhnhnms, where rational horses rule over brutish humans. Gulliver’s Travels combines biting satire with imaginative storytelling, making it one of the most enduring works of English literature.",
       "publisher": "Benjamin Motte",
-      "genre": [
+      "genres": [
         "Satire",
         "Adventure"
       ],
@@ -2640,7 +2641,7 @@ export class BookService {
       "shortDescription": "A sweeping epic of Russia’s aristocracy during the Napoleonic Wars, interwoven with philosophical reflections on history.",
       "fullDescription": "War and Peace is Leo Tolstoy’s monumental novel that intertwines the lives of Russian aristocrats with the tumultuous events of the Napoleonic Wars. Through the stories of Pierre Bezukhov, Prince Andrei Bolkonsky, and Natasha Rostova, Tolstoy examines the moral dilemmas, emotional struggles, and existential crises of his characters against the backdrop of historical events. The novel explores themes of fate, free will, love, and death, while Tolstoy also delves into philosophical discussions on the nature of war and historical determinism. War and Peace is celebrated for its rich character development, detailed historical setting, and its profound reflections on the human condition, making it one of the greatest works of world literature.",
       "publisher": "The Russian Messenger",
-      "genre": [
+      "genres": [
         "Historical Fiction",
         "Epic"
       ],
@@ -2671,7 +2672,7 @@ export class BookService {
       "shortDescription": "A tragic love story of a married woman who falls in love with a young officer.",
       "fullDescription": "Anna Karenina is Tolstoy’s masterpiece about love, society, and morality in 19th-century Russia. The novel centers on Anna, a beautiful and aristocratic woman trapped in an unhappy marriage, who embarks on a passionate affair with Count Vronsky. Her love defies societal expectations, leading to her eventual downfall and tragic demise. In contrast, the novel also follows the story of Konstantin Levin, a landowner who grapples with philosophical questions about faith, love, and the meaning of life. Anna Karenina is celebrated for its complex characters, its rich depiction of Russian society, and its exploration of the conflict between personal desires and social duty.",
       "publisher": "The Russian Messenger",
-      "genre": [
+      "genres": [
         "Realist Fiction"
       ],
       "year": 1877
@@ -2701,7 +2702,7 @@ export class BookService {
       "shortDescription": "The story of a man confronting his impending death and reflecting on the meaning of life.",
       "fullDescription": "The Death of Ivan Ilyich is a profound novella by Tolstoy that addresses the universal themes of mortality, suffering, and the search for meaning. The story follows Ivan Ilyich, a high-ranking judge in 19th-century Russia, who, after falling ill, is forced to confront his own death and re-examine his life. As Ivan reflects on his past decisions and the superficiality of his existence, the novella delves into existential questions about the nature of life and the inevitability of death. Tolstoy’s deep philosophical insights, combined with his keen psychological observations, make this work one of his most powerful and meditative literary achievements.",
       "publisher": "Mediator Publishers",
-      "genre": [
+      "genres": [
         "Novella",
         "Philosophical Fiction"
       ],
@@ -2732,7 +2733,7 @@ export class BookService {
       "shortDescription": "The story of a boy’s journey down the Mississippi River, confronting issues of race and freedom.",
       "fullDescription": "The Adventures of Huckleberry Finn is one of the most celebrated works in American literature, written by Mark Twain. The novel follows the young Huck Finn as he escapes from his abusive father and embarks on an adventure down the Mississippi River with Jim, an escaped enslaved man. As they travel, Huck wrestles with his own beliefs about slavery and society, leading to a moral awakening. Twain’s novel is a satirical critique of the social attitudes of the time, particularly regarding race and freedom. With its rich vernacular, vivid depiction of life along the Mississippi, and enduring themes of friendship and justice, Huckleberry Finn remains a cornerstone of American literature.",
       "publisher": "Chatto & Windus / Charles L. Webster and Company",
-      "genre": [
+      "genres": [
         "Adventure Fiction",
         "Satire"
       ],
@@ -2760,7 +2761,7 @@ export class BookService {
       "shortDescription": "An ancient Indian epic detailing the adventures of Prince Rama and his quest to rescue his wife, Sita.",
       "fullDescription": "The Ramayana, attributed to the sage Valmiki, is one of the great epics of ancient Indian literature. It tells the story of Rama, a prince of the kingdom of Ayodhya, who embarks on a perilous journey to rescue his wife, Sita, after she is kidnapped by the demon king Ravana. Along the way, Rama is aided by a host of allies, including the devoted Hanuman and the monkey army. The Ramayana explores themes of duty, loyalty, love, and the eternal struggle between good and evil. As both a spiritual and cultural text, the Ramayana has been central to Hindu religious tradition and continues to inspire readers across the world.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Epic Poetry",
         "Religious Text"
       ],
@@ -2788,7 +2789,7 @@ export class BookService {
       "shortDescription": "The Roman epic that follows the hero Aeneas on his journey to found the city of Rome.",
       "fullDescription": "Virgil’s The Aeneid is a foundational work of Roman literature that chronicles the journey of the Trojan hero Aeneas after the fall of Troy. Commissioned by Augustus, the epic celebrates the mythological origins of Rome and the values of Roman civilization. Aeneas’s long journey takes him to Carthage, where he has a doomed love affair with Queen Dido, and eventually to Italy, where he battles to establish a new Trojan state. The Aeneid is both a tale of adventure and a reflection on the costs of empire, fate, and leadership. Virgil’s work has had a lasting influence on Western literature, becoming a model for later epics and a symbol of Rome’s imperial destiny.",
       "publisher": "Various (Ancient Roman Text)",
-      "genre": [
+      "genres": [
         "Epic Poetry"
       ],
       "year": -23
@@ -2815,7 +2816,7 @@ export class BookService {
       "shortDescription": "A monumental Indian epic recounting the Kurukshetra War and the fates of the Kaurava and Pandava princes.",
       "fullDescription": "The Mahabharata is one of the two major Sanskrit epics of ancient India, attributed to the sage Vyasa. It is the longest epic poem ever written, encompassing stories of family conflict, divine intervention, and moral dilemmas. The central narrative concerns the power struggle between the Pandava and Kaurava families, culminating in the great battle of Kurukshetra. Alongside the epic tale, the Mahabharata includes important Hindu spiritual texts, such as the Bhagavad Gita, in which Lord Krishna imparts crucial philosophical teachings to the warrior Arjuna. The Mahabharata is a complex blend of history, mythology, and theology, deeply influencing Indian culture and religion.",
       "publisher": "Various",
-      "genre": [
+      "genres": [
         "Epic Poetry",
         "Religious Text"
       ],
@@ -2843,7 +2844,7 @@ export class BookService {
       "shortDescription": "A groundbreaking collection of poems celebrating the individual, nature, and the American spirit.",
       "fullDescription": "Leaves of Grass is a seminal work of American poetry by Walt Whitman, first published in 1855 and expanded throughout his life. The collection is known for its free verse style and its celebration of democracy, nature, love, and the human spirit. Whitman’s poetry broke with traditional forms, capturing the rhythms of everyday speech and embracing a uniquely American voice. Themes of individualism, sensuality, and transcendence run throughout the work, particularly in poems like “Song of Myself.” Leaves of Grass remains a defining text in American literature, hailed for its innovation and Whitman’s visionary embrace of the individual’s place within the larger fabric of society.",
       "publisher": "Self-published",
-      "genre": [
+      "genres": [
         "Poetry"
       ],
       "year": 1855
@@ -2873,7 +2874,7 @@ export class BookService {
       "shortDescription": "A day in the life of Clarissa Dalloway as she prepares for a party, reflecting on her past and present.",
       "fullDescription": "Mrs Dalloway is Virginia Woolf’s modernist masterpiece that captures the inner thoughts and emotions of its characters over the course of a single day. The novel centers on Clarissa Dalloway, a high-society woman preparing for a party in post-World War I London, but expands to include the lives of other characters, including a war veteran suffering from shell shock. Through Woolf’s innovative stream-of-consciousness technique, Mrs Dalloway delves into themes of time, memory, mental illness, and the complexity of human relationships. The novel is a poignant meditation on the passage of time and the ephemeral nature of life.",
       "publisher": "Hogarth Press",
-      "genre": [
+      "genres": [
         "Modernist Fiction"
       ],
       "year": 1925
@@ -2903,7 +2904,7 @@ export class BookService {
       "shortDescription": "The Ramsay family’s experiences on their summer vacation, explored through themes of time, memory, and perception.",
       "fullDescription": "To the Lighthouse is another of Woolf’s modernist works, renowned for its lyrical prose and innovative structure. Set over two visits to the Ramsay family’s summer home on the Isle of Skye, the novel is divided into three parts, with the middle section spanning ten years of time in a few pages. The characters’ internal thoughts, especially Mrs. Ramsay’s, dominate the narrative, offering a deep psychological exploration of family dynamics, art, and the passing of time. Woolf’s delicate interplay of memory and perception creates a work that is as much about the limitations of human experience as it is about the beauty of life’s fleeting moments.",
       "publisher": "Hogarth Press",
-      "genre": [
+      "genres": [
         "Modernist Fiction"
       ],
       "year": 1927
@@ -2933,7 +2934,7 @@ export class BookService {
       "shortDescription": "The fictionalized autobiography of Roman Emperor Hadrian, reflecting on his life and reign.",
       "fullDescription": "Memoirs of Hadrian is Marguerite Yourcenar’s elegant portrayal of the Roman Emperor Hadrian, written as a fictionalized letter to his successor, Marcus Aurelius. The novel recounts Hadrian’s rise to power, his military campaigns, and his personal reflections on governance, philosophy, and the nature of life and death. Yourcenar meticulously reconstructs the historical world of Rome in the 2nd century, blending it with profound philosophical musings. The result is a rich, introspective narrative that explores the tension between power and wisdom, love and loss, and the timeless question of what it means to live a good life. Memoirs of Hadrian is regarded as one of the finest historical novels ever written.",
       "publisher": "Plon",
-      "genre": [
+      "genres": [
         "Historical Fiction",
         "Philosophical Fiction"
       ],
@@ -2941,22 +2942,25 @@ export class BookService {
     }
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllBooks(): any[] {
-    console.log(Array.from(new Set(this.books.map(b => b.author))));
-    return this.books;
+  getAllBooks() {
+    return this.http.get("http://localhost:8080/api/book");
   }
 
-  getBookByIsbn(isbn: string): any {
-    return this.books.find(b => b.isbn == isbn);
+  getAllBooksFiltered(filter: string){
+    return this.http.get("http://localhost:8080/api/book/filter/" + filter);
+  }
+
+  getBookByIsbn(isbn: string) {
+    return this.http.get("http://localhost:8080/api/book/by-isbn/" + isbn);
   }
 
   getBooksByGenre(genres: string[], isbn: string) {
-    return this.books.filter(b => b?.genre?.some((g: any) => genres.includes(g)) && b.isbn != isbn).slice(0,6);
+    return this.http.get("http://localhost:8080/api/book/by-genres/" + genres);
   }
 
   getBooksByAuthor(authorId: number){
-    return this.books.filter(b => b?.author?.id == authorId).slice(0,6);
+    return this.http.get("http://localhost:8080/api/book/by-author/" + authorId);
   }
 }

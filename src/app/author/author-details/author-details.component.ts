@@ -17,9 +17,13 @@ export class AuthorDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.author = this.authorSerice.getAuthorById(params['id'])
-      this.spinner.hide();
-      this.authorBooks = this.bookService.getBooksByAuthor(this.author.id);
+      this.authorSerice.getAuthorById(params['id']).subscribe(result => {
+        this.author = result;
+        this.author.genres = this.author.genres.map((g:any) => g.replace(/([A-Z])/g, ' $1').trim())
+        this.bookService.getBooksByAuthor(this.author.id).subscribe((result: any) => {
+          this.authorBooks = result;
+        })
+      })
     })
   }
 

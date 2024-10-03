@@ -16,9 +16,12 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.book = this.bookService.getBookByIsbn(params['isbn'])
-      this.spinner.hide();
-      this.similarBooks = this.bookService.getBooksByGenre(this.book.genre, this.book.isbn);
+      this.bookService.getBookByIsbn(params['isbn']).subscribe(result => {
+        this.book = result;
+        this.bookService.getBooksByGenre(this.book.genres, this.book.isbn).subscribe((result:any) =>{
+          this.similarBooks = result.filter((b:any) => b.isbn != this.book.isbn);
+        });
+      })
     })
   }
 

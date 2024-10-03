@@ -12,9 +12,14 @@
       }">
       </div>
       <span class="spacer"></span>
-      <button mat-raised-button class="me-2 accent-2 text-dark" aria-label="" color="primary"
-        (click)="goToLogin()">Login</button>
-      <button mat-raised-button aria-label="" color="warn" (click)="goToRegister()">Register</button>
+      <button mat-raised-button class="me-2 accent-2 text-dark" aria-label="" color="primary" (click)="goToLogin()"
+        *ngIf="!isAuthenticated()">Login</button>
+      <button mat-raised-button aria-label="" color="warn" (click)="goToRegister()"
+        *ngIf="!isAuthenticated()">Register</button>
+      <div *ngIf="isAuthenticated()">{{getCurrentUser()}}</div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="user" *ngIf="isAuthenticated()">
+        <mat-icon>account_circle</mat-icon>
+      </button>
     </mat-toolbar>
   </div>
   <div class="row m-0 p-0" [ngClass]="{'h-100': !showToolbar}">
@@ -42,3 +47,10 @@
 </div>
 
 <ngx-spinner type="ball-clip-rotate-multiple"></ngx-spinner>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>power_settings_new</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

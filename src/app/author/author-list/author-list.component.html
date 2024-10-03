@@ -3,7 +3,7 @@
         <div class="col">
             <mat-form-field class="w-100">
                 <mat-label>Search</mat-label>
-                <input matInput>
+                <input matInput (change)="filterChanged($event)">
             </mat-form-field>
         </div>
     </div>
