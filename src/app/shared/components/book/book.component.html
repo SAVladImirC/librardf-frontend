@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar class="cursor-pointer" (click)="goToAuthor(book.author?.id)" [ngStyle]="{
+            'background-image': 'url(' + (book.author?.imageLink ? book.author?.imageLink : 'https://thumbs.dreamstime.com/b/profile-anonymous-face-icon-gray-silhouette-person-male-businessman-profile-default-avatar-photo-placeholder-isolated-white-107003824.jpg') + ')',
+            'background-size': 'cover'
+          }">
+        </div>
+        <mat-card-title (click)="goToDetails(book.isbn)" class="cursor-pointer">{{book.title}}</mat-card-title>
+        <mat-card-subtitle (click)="goToAuthor(book.author?.id)" class="cursor-pointer">{{getFullAuthorName(book.author)}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="'../../../assets/' + book.imageLink" alt="book image"
+        [ngStyle]="{'height': height + 'rem'}" (click)="goToDetails(book.isbn)" class="cursor-pointer">
+    <mat-card-content>
+        <p>
+            {{book.shortDescription}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button disabled>Pages: {{book.pages}}</button>
+        <button mat-button disabled>Year: {{book.year}}</button>
+    </mat-card-actions>
+</mat-card>

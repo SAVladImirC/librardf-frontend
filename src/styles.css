@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.accent-2 {
+    background-color: #FFC107!important;
+}
+
+.logo-auth{
+    width: 15rem;
+}
+
+.text-newline{
+    white-space: normal!important; /* Allow text to wrap */
+    overflow: visible!important;   /* Prevent content from being clipped */
+    text-overflow: clip!important; /* Remove the ellipsis */
+    word-wrap: break-word!important; 
+}
+
+.sidebar-width {
+    width: 100%!important;
+}
+@media (min-width: 768px) {
+    .sidebar-width {
+        width: 18rem !important;
+    }
+}

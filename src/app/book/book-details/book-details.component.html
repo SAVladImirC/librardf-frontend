@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5 d-flex flex-column align-items-center text-center pt-4">
+            <img [src]="'../../../assets/' + book.imageLink" alt="book image" style="height: 25rem;">
+            <div class="w-75 mt-2">{{book.fullDescription}}</div>
+        </div>
+        <div class="col-sm-7">
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemLine>ISBN</span>
+                    <span matListItemTitle>{{book.isbn}}</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemLine>Title</span>
+                    <span matListItemTitle>{{book.title}}</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle class="cursor-pointer">{{getFullAuthorName(book.author)}}</span>
+                    <span matListItemLine>Author</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle class="cursor-pointer">{{book.genre ?? []}}</span>
+                    <span matListItemLine>Genre</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{book.country}}</span>
+                    <span matListItemLine>Country</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{book.language}}</span>
+                    <span matListItemLine>Language</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{book.publisher}}</span>
+                    <span matListItemLine>Publisher</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{book.pages}}</span>
+                    <span matListItemLine>Pages</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{book.year}}</span>
+                    <span matListItemLine>Year</span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <div class="row my-2 px-3">
+        <mat-divider></mat-divider>
+        <h2>Similar books:</h2>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+            <ng-container *ngFor="let book of similarBooks; let i = index;">
+                <ng-container *ngIf="i % 6 === 0">
+                    <div class="row p-0 mb-2">
+                        <div class="col-sm-2" *ngFor="let indx of [i + 0, i + 1, i + 2, i + 3, i + 4, i + 5]">
+                            <ng-container *ngIf="similarBooks[indx]; let nextItem">
+                                <app-book [book]="nextItem" [height]="25"></app-book>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>

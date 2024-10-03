@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5 text-center pt-4">
+            <img [src]="author.imageLink" alt="author image" style="height: 25rem;">
+        </div>
+        <div class="col-sm-7">
+            <mat-list role="list">
+                <mat-list-item>
+                    <span matListItemTitle>{{author.name}}</span>
+                    <span matListItemLine>Name</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{author.dob}}</span>
+                    <span matListItemLine>Date of birth</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{author.nationality}}</span>
+                    <span matListItemLine>Nationality</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <span matListItemTitle>{{author.genres}}</span>
+                    <span matListItemLine>Genre</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+    </div>
+    <div class="row my-2 px-3">
+        <mat-divider></mat-divider>
+        <h2>Other books by {{getFullAuthorName()}}:</h2>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+            <ng-container *ngFor="let book of authorBooks; let i = index;">
+                <ng-container *ngIf="i % 6 === 0">
+                    <div class="row p-0 mb-2">
+                        <div class="col-sm-2" *ngFor="let indx of [i + 0, i + 1, i + 2, i + 3, i + 4, i + 5]">
+                            <ng-container *ngIf="authorBooks[indx]; let nextItem">
+                                <app-book [book]="nextItem" [height]="25"></app-book>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>

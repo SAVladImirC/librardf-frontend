@@ -1,0 +1,68 @@
+<div class="h-100 d-flex flex-column justify-content-center align-items-center login-background">
+    <img src="../../../assets/logo.png" alt="logo" class="logo-auth mt-5">
+    <div class="pb-4">
+        <mat-card class="mb-1">
+            <mat-card-title class="text-center my-3">
+                <span>Register</span>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container-fluid" [formGroup]="registerGroup">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field>
+                                <mat-label>Name</mat-label>
+                                <input type="password" matInput formControlName="name">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field>
+                                <mat-label>Surname</mat-label>
+                                <input type="password" matInput formControlName="surname">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input type="password" matInput formControlName="email">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName="password">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field>
+                                <mat-label>Confirm Password</mat-label>
+                                <input type="password" matInput formControlName="confirmPassword">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field>
+                                <mat-label>Address</mat-label>
+                                <input type="password" matInput formControlName="address">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-error d-flex justify-content-center min-height-25"></div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-footer class="text-center mb-4">
+                <button type="submit" (click)="register()" mat-raised-button>Register</button>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>
