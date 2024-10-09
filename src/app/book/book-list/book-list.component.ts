@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthorService } from 'src/app/core/services/author.service';
 import { BookService } from 'src/app/core/services/book.service';
@@ -10,11 +11,17 @@ import { BookService } from 'src/app/core/services/book.service';
 })
 export class BookListComponent implements OnInit {
   books: any[] = [];
+  selectedGenres: any[] = [];
+  filter: string = "";
 
-  constructor(private bookService: BookService, private authorService: AuthorService, private spinner: NgxSpinnerService) { }
+  constructor(private bookService: BookService, private authorService: AuthorService, private spinner: NgxSpinnerService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllBooks();
+  }
+
+  goToEdit(){
+    this.router.navigate(['books/edit']);
   }
 
   getAllBooks() {
@@ -33,11 +40,29 @@ export class BookListComponent implements OnInit {
     })
   }
 
-  filterChanged(filter: any) {
-    if (filter.target.value) {
-      this.getFilteredBooks(filter.target.value);
+  getBooksByGenre() {
+    this.spinner.show();
+    this.bookService.getBooksByGenre(this.selectedGenres).subscribe((result: any) => {
+      this.books = result;
+      this.spinner.hide();
+    })
+  }
+
+  filterChanged() {
+    if (this.filter) {
+      this.selectedGenres = [];
+      this.getFilteredBooks(this.filter);
     } else {
       this.getAllBooks();
     }
+  }
+
+  bookSelectionChanged() {
+    if (this.selectedGenres.length){
+      this.filter = "";
+      this.getBooksByGenre();
+    }
+    else
+      this.getAllBooks();
   }
 }

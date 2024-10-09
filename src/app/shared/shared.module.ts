@@ -30,6 +30,9 @@ import { BookComponent } from './components/book/book.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AuthorComponent } from './components/author/author.component';
+import { GenreSelectionComponent } from './components/genre-selection/genre-selection.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { AuthorSelectionComponent } from './components/author-selection/author-selection.component';
 
 const modules = [
   CommonModule,
@@ -62,18 +65,22 @@ const modules = [
   MatProgressBarModule,
   MatTooltipModule,
   MatDividerModule,
-  MatSidenavModule
+  MatSidenavModule,
+  NgxMatSelectSearchModule
 ];
 
 const components = [
   BookComponent,
-  AuthorComponent
+  AuthorComponent,
+  GenreSelectionComponent,
+  AuthorSelectionComponent,
 ]
 
 @NgModule({
   declarations: [
     ...components,
-    AuthorComponent
+    AuthorComponent,
+    AuthorSelectionComponent,
   ],
   imports: [
     CommonModule,

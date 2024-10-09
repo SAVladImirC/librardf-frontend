@@ -1,0 +1,11 @@
+<mat-form-field class="w-100" color="primary" subscriptSizing="dynamic">
+    <mat-label>Authors</mat-label>
+    <mat-select [(ngModel)]="model" [multiple]="multiple" (ngModelChange)="selected($event)">
+        <mat-option>
+            <ngx-mat-select-search ngModel (ngModelChange)="filterAuthors($event)" [placeholderLabel]="'Search'">
+            </ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let author of authorsFiltered" [value]="author.id">{{author.name}} {{author.surname}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

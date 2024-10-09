@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { InsertRequest } from '../requests/author/insert-request';
+import { environment } from 'src/environments/environments';
+import { UpdateRequest } from '../requests/author/update-request';
 
 @Injectable({
   providedIn: 'root'
@@ -1070,7 +1073,7 @@ export class AuthorService {
       "dob": "1861-12-19",
       "dod": "1928-09-13",
       "nationality": "Italian",
-      "imageUrl": "https://example.com/images/svevo.jpg",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFKzz9CCa5LUFuUhSvq_0NUllzQ2WcSWcW7Q&s",
       "biography": "Italo Svevo was an Italian novelist and playwright, best known for his novel 'Confessions of Zeno,' which explores the complexities of identity, addiction, and self-deception through the confessions of a neurotic businessman. Svevo's writing combines elements of psychological realism with humor and a deep exploration of the human psyche. His work was largely overlooked during his lifetime but gained recognition posthumously, influencing many modern writers and securing Svevo's place as a key figure in 20th-century literature."
     },
     {
@@ -1123,14 +1126,22 @@ export class AuthorService {
   constructor(private http: HttpClient) { }
 
   getAllAuthors() {
-    return this.http.get("http://localhost:8080/api/author");
+    return this.http.get(environment.authors_all);
   }
 
   getAllAuthorsFiltered(filter: string) {
-    return this.http.get("http://localhost:8080/api/author/filter/" + filter);
+    return this.http.get(environment.authors_filter + "/" + filter);
   }
 
   getAuthorById(id: number) {
-    return this.http.get("http://localhost:8080/api/author/" + id);
+    return this.http.get(environment.authors_by_id + "/" + id);
+  }
+
+  insert(request: InsertRequest) {
+    return this.http.post(environment.authors_insert, request);
+  }
+
+  update(request: UpdateRequest) {
+    return this.http.post(environment.authors_update, request);
   }
 }

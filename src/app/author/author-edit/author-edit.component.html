@@ -1,0 +1,73 @@
+<div class="h-100 d-flex flex-column justify-content-center align-items-center login-background">
+    <mat-card class="my-2">
+        <mat-card-title class="text-center my-3">
+            <span>Author</span>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="container-fluid" [formGroup]="authorGroup">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput formControlName="name" autofocus>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <mat-label>Surname</mat-label>
+                            <input type="text" matInput formControlName="surname">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <mat-label>Date of birth</mat-label>
+                            <input type="text" matInput formControlName="dob">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <mat-label>Date of death</mat-label>
+                            <input type="text" matInput formControlName="dod">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <mat-label>Nationality</mat-label>
+                            <input type="text" matInput formControlName="nationality">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                        <mat-form-field>
+                            <mat-label>Image URL</mat-label>
+                            <input type="text" matInput formControlName="imageUrl">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label>Biography</mat-label>
+                        <textarea matInput formControlName="biography" rows="5"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="w-100">
+                            <mat-label>Genres</mat-label>
+                            <mat-select formControlName="genres" multiple>
+                                <mat-option *ngFor="let genre of getGenres()"
+                                    [value]="genre">{{genre}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-footer class="text-center mb-4">
+            <button type="submit" (click)="save()" mat-raised-button>Save</button>
+        </mat-card-footer>
+    </mat-card>
+</div>

@@ -1,0 +1,11 @@
+<mat-form-field class="w-100" color="primary" subscriptSizing="dynamic">
+    <mat-label>Genres</mat-label>
+    <mat-select [(ngModel)]="model" [multiple]="multiple" (ngModelChange)="selected($event)">
+        <mat-option>
+            <ngx-mat-select-search ngModel (ngModelChange)="filterGenres($event)" [placeholderLabel]="'Search'">
+            </ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let genre of genresFiltered" [value]="genre.id">{{genre.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

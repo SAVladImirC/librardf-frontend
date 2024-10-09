@@ -1,7 +1,8 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-5 text-center pt-4">
-            <img [src]="author?.imageLink" alt="author image" style="height: 25rem;">
+        <div class="col-sm-5 d-flex flex-column align-items-center text-center pt-4">
+            <img [src]="author?.imageUrl" alt="author image" style="height: 25rem;">
+            <div class="w-75 mt-2">{{author?.biography}}</div>
         </div>
         <div class="col-sm-7">
             <mat-list role="list">
@@ -16,21 +17,27 @@
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
+                    <span matListItemTitle>{{author?.dod}}</span>
+                    <span matListItemLine>Date of death</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
                     <span matListItemTitle>{{author?.nationality}}</span>
                     <span matListItemLine>Nationality</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{author?.genres}}</span>
+                    <span matListItemTitle>{{getGenres(author?.genres)}}</span>
                     <span matListItemLine>Genre</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
             </mat-list>
+            <button mat-fab color="primary" (click)="editAuthor()"><mat-icon>edit</mat-icon></button>
         </div>
     </div>
     <div class="row my-2 px-3">
         <mat-divider></mat-divider>
-        <h2>Other books by {{getFullAuthorName()}}:</h2>
+        <h2>Books by {{getFullAuthorName()}}:</h2>
     </div>
     <div class="row">
         <div class="container-fluid">

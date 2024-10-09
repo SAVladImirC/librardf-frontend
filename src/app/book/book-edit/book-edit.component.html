@@ -1,0 +1,81 @@
+<div class="h-100 d-flex flex-column justify-content-center align-items-center login-background">
+    <mat-card class="my-2">
+        <mat-card-title class="text-center my-3">
+            <mat-icon class="float-start ms-3">{{getIcon()}}</mat-icon>
+            <span>Book </span> <span *ngIf="book?.isbn">- {{book.isbn}}</span>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="container-fluid" [formGroup]="bookGroup">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Title</mat-label>
+                            <input type="text" matInput formControlName="title" autofocus>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <app-author-selection [(model)]="selectedAuthor"></app-author-selection>
+                    </div>
+                    <div class="col-sm-4">
+                        <app-genre-selection [multiple]="true" [(model)]="selectedGenres"></app-genre-selection>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Country</mat-label>
+                            <input type="text" matInput formControlName="country">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Language</mat-label>
+                            <input type="text" matInput formControlName="language">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Publisher</mat-label>
+                            <input type="text" matInput formControlName="publisher">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Pages</mat-label>
+                            <input type="text" matInput formControlName="pages">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Year</mat-label>
+                            <input type="text" matInput formControlName="year">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-form-field>
+                            <mat-label>Image URL</mat-label>
+                            <input type="text" matInput formControlName="imageLink">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label>Short Description</mat-label>
+                        <textarea matInput formControlName="shortDescription" rows="5"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label>Full Description</mat-label>
+                        <textarea matInput formControlName="fullDescription" rows="10"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-footer class="text-center mb-4">
+            <button type="submit" (click)="save()" mat-raised-button>Save</button>
+        </mat-card-footer>
+    </mat-card>
+</div>

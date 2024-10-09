@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthorService } from 'src/app/core/services/author.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthorService } from 'src/app/core/services/author.service';
 export class AuthorListComponent implements OnInit {
   authors: any[] = [];
 
-  constructor(private authorService: AuthorService) { }
+  constructor(private authorService: AuthorService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllAuthors();
@@ -32,5 +33,9 @@ export class AuthorListComponent implements OnInit {
       this.getAllAuthorsFiltered(filter.target.value)
     else
       this.getAllAuthors();
+  }
+
+  addAuthor():void{
+    this.router.navigate(['./authors/create'])
   }
 }

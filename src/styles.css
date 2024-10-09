@@ -19,23 +19,31 @@ body {
 }
 
 .accent-2 {
-    background-color: #FFC107!important;
+    background-color: #FFC107 !important;
 }
 
-.logo-auth{
+.logo-auth {
     width: 15rem;
 }
 
-.text-newline{
-    white-space: normal!important; /* Allow text to wrap */
-    overflow: visible!important;   /* Prevent content from being clipped */
-    text-overflow: clip!important; /* Remove the ellipsis */
-    word-wrap: break-word!important; 
+.text-newline {
+    white-space: normal !important;
+    /* Allow text to wrap */
+    overflow: visible !important;
+    /* Prevent content from being clipped */
+    text-overflow: clip !important;
+    /* Remove the ellipsis */
+    word-wrap: break-word !important;
+}
+
+.height-45 {
+    height: 45rem !important;
 }
 
 .sidebar-width {
-    width: 100%!important;
+    width: 100% !important;
 }
+
 @media (min-width: 768px) {
     .sidebar-width {
         width: 18rem !important;

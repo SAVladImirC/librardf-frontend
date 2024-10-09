@@ -1,10 +1,13 @@
 <div class="container mt-2">
     <div class="row text-center">
-        <div class="col">
+        <div class="col-11">
             <mat-form-field class="w-100">
                 <mat-label>Search</mat-label>
                 <input matInput (change)="filterChanged($event)">
             </mat-form-field>
+        </div>
+        <div class="col-1 text-end">
+            <button mat-fab color="primary" (click)="addAuthor()"><mat-icon>add</mat-icon></button>
         </div>
     </div>
 </div>

@@ -5,12 +5,14 @@ import { AuthorRoutingModule } from './author-routing.module';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthorListComponent } from './author-list/author-list.component';
+import { AuthorEditComponent } from './author-edit/author-edit.component';
 
 
 @NgModule({
   declarations: [
     AuthorDetailsComponent,
-    AuthorListComponent
+    AuthorListComponent,
+    AuthorEditComponent
   ],
   imports: [
     AuthorRoutingModule,

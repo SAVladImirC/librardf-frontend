@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['authors']);
   }
 
+  goToGenres(): void {
+    this.router.navigate(['genres']);
+  }
+
   goToLogin(): void {
     this.router.navigate(['auth/login']);
   }
@@ -50,7 +54,7 @@ export class AppComponent implements OnInit {
     return this.authService.currentUser.email;
   }
 
-  logout(): void{
+  logout(): void {
     this.authService.logout();
   }
 }
