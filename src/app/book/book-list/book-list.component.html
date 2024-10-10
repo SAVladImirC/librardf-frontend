@@ -1,10 +1,11 @@
 <div class="container-fluid mt-2">
     <div class="row justify-content-between">
         <div class="col-sm-2">
-            <app-genre-selection [(model)]="selectedGenres" [multiple]="true" (modelChange)="bookSelectionChanged()"></app-genre-selection>
+            <app-genre-selection [(model)]="selectedGenres" [multiple]="true"
+                (modelChange)="bookGenreChanged()"></app-genre-selection>
         </div>
         <div class="col-sm-2 text-center">
-            <button mat-fab color="primary" (click)="goToEdit()">
+            <button mat-fab color="primary" (click)="goToEdit()" *ngIf="authService.showLibrarianOptions()">
                 <mat-icon>add</mat-icon>
             </button>
         </div>

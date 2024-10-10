@@ -1,4 +1,4 @@
-<mat-card class="height-45">
+<mat-card class="height-45" [ngClass]="{'height-45': !small, 'height-38': small}">
     <mat-card-header>
         <div mat-card-avatar class="cursor-pointer" (click)="goToAuthor(book.author?.id)" [ngStyle]="{
             'background-image': 'url(' + book.author?.imageUrl + ')',
@@ -19,7 +19,7 @@
     <mat-card-actions class="justify-content-between">
         <button mat-button disabled>Pages: {{book.pages}}</button>
         <button mat-button disabled>Genres: {{getGenres()}}</button>
-        <button mat-mini-fab color="primary" (click)="goToEdit()">
+        <button mat-mini-fab color="primary" (click)="goToEdit()" *ngIf="authService.showLibrarianOptions()">
             <mat-icon>edit</mat-icon>
         </button>
     </mat-card-actions>

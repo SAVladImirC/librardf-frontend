@@ -1,13 +1,20 @@
-<div class="container mt-2">
-    <div class="row text-center">
-        <div class="col-11">
+<div class="container-fluid mt-2">
+    <div class="row row justify-content-between">
+        <div class="col-sm-2">
+            <app-genre-selection [(model)]="selectedGenres" [multiple]="true"
+                (modelChange)="authorGenreChanged()"></app-genre-selection>
+        </div>
+        <div class="col-sm-2 text-center">
+            <button mat-fab color="primary" (click)="addAuthor()" *ngIf="authService.showLibrarianOptions()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        <div class="col-sm-2">
             <mat-form-field class="w-100">
                 <mat-label>Search</mat-label>
-                <input matInput (change)="filterChanged($event)">
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput [(ngModel)]="filter" (ngModelChange)="filterChanged()">
             </mat-form-field>
-        </div>
-        <div class="col-1 text-end">
-            <button mat-fab color="primary" (click)="addAuthor()"><mat-icon>add</mat-icon></button>
         </div>
     </div>
 </div>

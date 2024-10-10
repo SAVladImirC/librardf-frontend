@@ -15,6 +15,7 @@ export const environment = {
     //#region Author
     authors_all: base + "author",
     authors_filter: base + "author/filter",
+    authors_by_genres: base + "author/by-genres",
     authors_by_id: base + "author",
     authors_insert: base + "author/insert",
     authors_update: base + "author/update",

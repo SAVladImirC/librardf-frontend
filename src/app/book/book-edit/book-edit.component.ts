@@ -15,6 +15,9 @@ export class BookEditComponent implements OnInit {
   selectedGenres: number[] = [];
   selectedAuthor: number = 0;
 
+  message: string = "";
+  lock: boolean = false;
+
   bookGroup: FormGroup = new FormGroup({
     isbn: new FormControl(''),
     title: new FormControl(''),
@@ -60,13 +63,78 @@ export class BookEditComponent implements OnInit {
   save() {
     if (this.book?.isbn) {
       let request: UpdateRequest = new UpdateRequest();
-      //request.isbn = this.bookGroup.get('isbn')?.value;
 
-      this.bookService.update(request);
+      request.isbn = this.bookGroup.get('isbn')?.value;
+      request.title = this.bookGroup.get('title')?.value;
+      request.publisher = this.bookGroup.get('publisher')?.value;
+      request.shortDescription = this.bookGroup.get('shortDescription')?.value;
+      request.fullDescription = this.bookGroup.get('fullDescription')?.value;
+      request.language = this.bookGroup.get('language')?.value;
+      request.imageLink = this.bookGroup.get('imageLink')?.value;
+      request.year = this.bookGroup.get('year')?.value;
+      request.pages = this.bookGroup.get('pages')?.value;
+      request.country = this.bookGroup.get('country')?.value;
+      request.authorId = this.selectedAuthor;
+      request.genres = this.selectedGenres;
+
+      this.bookService.update(request).subscribe({
+        next: (result: any) => {
+          if (result) {
+            this.message = "Successfully saved";
+            setTimeout(() => {
+              this.message = "";
+            }, 3000);
+          } else {
+            this.message = "Problem occured";
+            setTimeout(() => {
+              this.message = "";
+            }, 3000);
+          }
+        },
+        error: (e) => {
+          this.message = "Problem occured";
+          setTimeout(() => {
+            this.message = "";
+          }, 3000);
+        }
+      });
     } else {
       let request: InsertRequest = new InsertRequest();
 
-      this.bookService.insert(request);
+      request.title = this.bookGroup.get('title')?.value;
+      request.publisher = this.bookGroup.get('publisher')?.value;
+      request.shortDescription = this.bookGroup.get('shortDescription')?.value;
+      request.fullDescription = this.bookGroup.get('fullDescription')?.value;
+      request.language = this.bookGroup.get('language')?.value;
+      request.imageLink = this.bookGroup.get('imageLink')?.value;
+      request.year = this.bookGroup.get('year')?.value;
+      request.pages = this.bookGroup.get('pages')?.value;
+      request.country = this.bookGroup.get('country')?.value;
+      request.authorId = this.selectedAuthor;
+      request.genres = this.selectedGenres;
+
+      this.bookService.insert(request).subscribe({
+        next: (result: any) => {
+          if (result) {
+            this.message = "Successfully saved";
+            this.lock = true;
+            setTimeout(() => {
+              this.message = "";
+            }, 3000);
+          } else {
+            this.message = "Problem occured";
+            setTimeout(() => {
+              this.message = "";
+            }, 3000);
+          }
+        },
+        error: (e) => {
+          this.message = "Problem occured";
+          setTimeout(() => {
+            this.message = "";
+          }, 3000);
+        }
+      });
     }
   }
 

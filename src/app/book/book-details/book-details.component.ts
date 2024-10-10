@@ -45,7 +45,7 @@ export class BookDetailsComponent implements OnInit {
 
   getBookImageUrl() {
     if (this.book?.imageLink)
-      if (this.book.imageLink.includes('images/'))
+      if (this.book.imageLink.includes('images-local/'))
         return '../../../assets/' + this.book?.imageLink;
       else return this.book.imageLink;
     else return '';

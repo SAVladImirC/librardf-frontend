@@ -21,6 +21,10 @@ export class RegisterComponent {
     address: new FormControl(''),
   });
 
+  goToLogin(): void{
+    this.router.navigate(['auth/login']);
+  }
+
   register(): void {
     var request: RegisterRequest = new RegisterRequest();
     request.name = this.registerGroup.get('name')?.value;

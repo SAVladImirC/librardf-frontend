@@ -75,7 +75,8 @@
             </div>
         </mat-card-content>
         <mat-card-footer class="text-center mb-4">
-            <button type="submit" (click)="save()" mat-raised-button>Save</button>
+            <button type="submit" (click)="save()" mat-raised-button [disabled]="lock">Save</button>
+            <div class="text-danger mt-1">{{message}}</div>
         </mat-card-footer>
     </mat-card>
 </div>

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Genre</h1>
+<div mat-dialog-content class="pt-4">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" matInput [(ngModel)]="genre.name" autofocus>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="save()">Save</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+</div>

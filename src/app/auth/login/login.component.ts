@@ -13,19 +13,23 @@ export class LoginComponent {
   username: FormControl = new FormControl('');
   password: FormControl = new FormControl('');
 
-  constructor(private authService: AuthService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router) { }
 
-  login(): void{
+  goToRegister(): void {
+    this.router.navigate(['auth/register']);
+  }
+
+  login(): void {
     var request: LoginRequest = new LoginRequest();
     request.email = this.username.value;
     request.password = this.password.value;
 
-    this.authService.login(request).subscribe((result:any) =>{
-      if(result && result.id > 0){
+    this.authService.login(request).subscribe((result: any) => {
+      if (result && result.id > 0) {
         this.authService.isAuthenticated = true;
         this.authService.currentUser = result;
         this.router.navigate(['']);
-      }else{
+      } else {
         this.authService.isAuthenticated = false;
       }
     })

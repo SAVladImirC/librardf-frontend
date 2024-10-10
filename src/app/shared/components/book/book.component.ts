@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-book',
@@ -9,8 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class BookComponent {
   @Input() book: any;
   @Input() height: number = 35;
+  @Input() small: boolean = false;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, public authService: AuthService) { }
 
   goToDetails() {
     this.router.navigate(['books/details', this.book.isbn])

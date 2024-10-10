@@ -7,7 +7,10 @@
         class="cursor-pointer">
     <mat-card-content>
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button disabled>Genres: {{getGenres(author.genres)}}</button>
+    <mat-card-actions class="justify-content-between">
+        <button mat-button disabled>Genres: {{getGenres()}}</button>
+        <button mat-mini-fab color="primary" (click)="goToEdit()" *ngIf="authService.showLibrarianOptions()">
+            <mat-icon>edit</mat-icon>
+        </button>
     </mat-card-actions>
 </mat-card>

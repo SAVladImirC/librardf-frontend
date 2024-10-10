@@ -25,6 +25,10 @@ export class AuthService {
   logout(): void{
     this.isAuthenticated = false;
     this.currentUser = null;
-    this.router.navigate(['auth/register']);
+    this.router.navigate(['auth/login']);
+  }
+
+  showLibrarianOptions(): boolean{
+    return this.isAuthenticated && this.currentUser.role == "LIBRARIAN";
   }
 }

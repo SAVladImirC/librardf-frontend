@@ -1,7 +1,7 @@
 export class InsertRequest {
     name: string = "";
     surname: string = "";
-    genres: string[] = [];
+    genres: number[] = [];
     dob: string = "";
     dod: string = "";
     nationality: string = "";

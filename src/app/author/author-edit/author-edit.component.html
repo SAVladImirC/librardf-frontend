@@ -1,7 +1,7 @@
 <div class="h-100 d-flex flex-column justify-content-center align-items-center login-background">
     <mat-card class="my-2">
         <mat-card-title class="text-center my-3">
-            <span>Author</span>
+            <span>Author</span> <span> - {{author?.id}}</span>
         </mat-card-title>
         <mat-card-content>
             <div class="container-fluid" [formGroup]="authorGroup">
@@ -55,19 +55,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <mat-form-field class="w-100">
-                            <mat-label>Genres</mat-label>
-                            <mat-select formControlName="genres" multiple>
-                                <mat-option *ngFor="let genre of getGenres()"
-                                    [value]="genre">{{genre}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
+                        <app-genre-selection [(model)]="selectedGenres" [multiple]="true"></app-genre-selection>
                     </div>
                 </div>
             </div>
         </mat-card-content>
-        <mat-card-footer class="text-center mb-4">
-            <button type="submit" (click)="save()" mat-raised-button>Save</button>
+        <mat-card-footer class="text-center mb-4 mt-2">
+            <button type="submit" (click)="save()" mat-raised-button [disabled]="lock">Save</button>
+            <div class="text-danger mt-1">{{message}}</div>
         </mat-card-footer>
     </mat-card>
 </div>

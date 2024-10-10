@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-author',
@@ -10,13 +11,18 @@ export class AuthorComponent {
   @Input() author: any;
   @Input() height: number = 35;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public authService: AuthService) { }
 
-  getGenres(genres: string[]) {
-    return genres.map(g => g.replace(/([A-Z])/g, ' $1').trim());
+  getGenres() {
+    if (this.author?.genres)
+      return this.author.genres.map((g: any) => g.name).join(", ")
   }
 
   goToDetails() {
     this.router.navigate(['authors/details', this.author.id]);
+  }
+
+  goToEdit(){
+    this.router.navigate(['authors/edit', this.author.id]);
   }
 }

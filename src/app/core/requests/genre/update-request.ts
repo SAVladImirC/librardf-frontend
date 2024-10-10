@@ -1,3 +1,9 @@
-export class UpdateRequest{
-    
+export class UpdateRequest {
+    id: number;
+    name: string;
+
+    constructor(id: number, name: string) {
+        this.id = id;
+        this.name = name;
+    }
 }

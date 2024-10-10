@@ -7,8 +7,8 @@
         <div class="col-sm-7">
             <mat-list role="list">
                 <mat-list-item>
-                    <span matListItemTitle>{{author?.name}}</span>
-                    <span matListItemLine>Name</span>
+                    <span matListItemTitle>{{author?.name }} {{author?.surname}}</span>
+                    <span matListItemLine>Full Name</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
@@ -27,12 +27,11 @@
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <span matListItemTitle>{{getGenres(author?.genres)}}</span>
+                    <span matListItemTitle>{{getGenres()}}</span>
                     <span matListItemLine>Genre</span>
                 </mat-list-item>
                 <mat-divider></mat-divider>
             </mat-list>
-            <button mat-fab color="primary" (click)="editAuthor()"><mat-icon>edit</mat-icon></button>
         </div>
     </div>
     <div class="row my-2 px-3">
@@ -46,7 +45,7 @@
                     <div class="row p-0 mb-2">
                         <div class="col-sm-2" *ngFor="let indx of [i + 0, i + 1, i + 2, i + 3, i + 4, i + 5]">
                             <ng-container *ngIf="authorBooks[indx]; let nextItem">
-                                <app-book [book]="nextItem" [height]="25"></app-book>
+                                <app-book [book]="nextItem" [height]="25" [small]="true"></app-book>
                             </ng-container>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'LibraRDF';
   showToolbar: boolean = true;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private authService: AuthService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, public authService: AuthService) { }
 
   goHome(): void {
     this.router.navigate(['']);

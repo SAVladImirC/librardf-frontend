@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { AuthorService } from 'src/app/core/services/author.service';
 import { BookService } from 'src/app/core/services/book.service';
 
@@ -14,13 +15,13 @@ export class BookListComponent implements OnInit {
   selectedGenres: any[] = [];
   filter: string = "";
 
-  constructor(private bookService: BookService, private authorService: AuthorService, private spinner: NgxSpinnerService, private router: Router) { }
+  constructor(private bookService: BookService, private authorService: AuthorService, private spinner: NgxSpinnerService, private router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.getAllBooks();
   }
 
-  goToEdit(){
+  goToEdit() {
     this.router.navigate(['books/edit']);
   }
 
@@ -57,8 +58,8 @@ export class BookListComponent implements OnInit {
     }
   }
 
-  bookSelectionChanged() {
-    if (this.selectedGenres.length){
+  bookGenreChanged() {
+    if (this.selectedGenres.length) {
       this.filter = "";
       this.getBooksByGenre();
     }

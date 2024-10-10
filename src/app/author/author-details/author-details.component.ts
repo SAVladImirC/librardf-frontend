@@ -19,7 +19,6 @@ export class AuthorDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.authorService.getAuthorById(params['id']).subscribe(result => {
         this.author = result;
-        this.author.genres = this.author.genres.map((g: any) => g.replace(/([A-Z])/g, ' $1').trim())
         this.bookService.getBooksByAuthor(this.author.id).subscribe((result: any) => {
           this.authorBooks = result;
         })
@@ -37,10 +36,9 @@ export class AuthorDetailsComponent implements OnInit {
     } else return 'Unknown';
   }
 
-  getGenres(genres: string[]) {
-    if (genres)
-      return genres.map(g => g.replace(/([A-Z])/g, ' $1').trim());
-    return [];
+  getGenres() {
+    if(this.author?.genres)
+    return this.author.genres.map((g: any) => g.name).join(", ")
   }
 
 }
